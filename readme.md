@@ -27,7 +27,10 @@ O arquivo `index.html` concentra **toda** a página inicial: marcação, dezenas
 
 ## 2. Diagnóstico
 
-### 2.1 Problemas críticos
+### 2.1 Relatório Lighthouse
+https://pagespeed.web.dev/analysis/https-www-l2amerika-com/copcw1qqqp?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=pt&utm_source=lh-chrome-ext
+
+### 2.2 Problemas críticos
 - **Sem `<!DOCTYPE html>`** e sem atributo `lang` no `<html>`.
 - **CSS inline gigantesco** (~800+ linhas só de estilos espalhados em `<style>` no `<head>` e no `<body>`).
 - **JS inline** com lógica de negócio (contador de evento PvP global) acoplado ao HTML.
@@ -38,7 +41,7 @@ O arquivo `index.html` concentra **toda** a página inicial: marcação, dezenas
 - **Bloco comentado** do `event-bar` (linhas 1447–1466) deixado no fonte.
 - **Texto misto** PT/EN sem i18n estruturada.
 
-### 2.2 Problemas moderados
+### 2.3 Problemas moderados
 - `meta keywords` poluído e contraproducente.
 - Sem `<meta name="theme-color">`, sem manifest, sem favicons modernos (apenas `.ico`).
 - Sem Open Graph image (`og:image` ausente).
