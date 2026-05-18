@@ -1,2416 +1,1612 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="imagetoolbar" content="no" />
-		<meta name="keywords" content="amerika, high five - pvp server - l2j server, l2, l2 high five, h5, lineage, lineage2, lineage 2, lainiege, laineage, lainiage, lineage dois, lineage ii, internacional, international, portuguese, english, espanish, espanol, espanhol, portugues, ingles, l2j, br, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, gracia, diversao gratis, high five, interlude, free fun, new server, novo servidor, o melhor servidor de lineage 2, o melhor servidor"/>
-		<meta name="description" content="Amerika, the respected server High Five - PvP Server - L2J Server. L2 PvP, Easy Farm, Balanced Classes. 16 Years Online! Join us and play the best of L2 PvP Server H5!"/>
-		<link rel="shortcut icon" href="https://www.l2amerika.com/imgs/favicon.ico">
-		<title>Amerika - High Five - PvP Server - L2J Server</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta property="og:title" content="Amerika - High Five - PvP Server - L2J Server" />
-		<meta property="og:site_name" content="Amerika" />
-		<meta property="og:url" content="https://www.l2amerika.com" />
-		<meta property="og:description" content="Amerika, the respected server High Five - PvP Server - L2J Server. L2 PvP, Easy Farm, Balanced Classes. 16 Years Online! Join us and play the best of L2 PvP Server H5!" />
-		<meta property="og:type" content="website" />
-		
-		<!-- Estilos CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://www.l2amerika.com/css/rpg-awesome.css">
-		<link rel="stylesheet" href="https://www.l2amerika.com/css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="https://www.l2amerika.com/css/text_style.css"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-		<link rel="stylesheet" href="https://www.l2amerika.com/css/font-awesome.min.css">
-		
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet">
-		
-		<!-- Scripts -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" type="81c0c91b339f60135225285c-text/javascript"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" type="81c0c91b339f60135225285c-text/javascript"></script>
-		
-		<!-- Snow Christmas -->
-		<style>
-		#snow-container {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			pointer-events: none; /* Permite interagir com o conteúdo do site */
-			z-index: 9999; /* Garante que fique sobre o conteúdo */
-		}
-		
-		.snowflake {
-			position: absolute; /* Usa posição absoluta para movimentação individual */
-			top: -10px; /* Começa fora da tela */
-			color: white;
-			font-size: 1em; /* Tamanho inicial */
-			opacity: 0.8; /* Transparência */
-			user-select: none;
-			animation: fall linear infinite, sway ease-in-out infinite;
-		}
-		
-		/* Animação para queda */
-		@keyframes fall {
-			0% {
-				top: -10px;
-			}
-			100% {
-				top: 110vh; /* Cai até um pouco além do final da tela */
-			}
-		}
-		
-		/* Oscilação lateral */
-		@keyframes sway {
-			0%, 100% {
-				transform: translateX(0);
-			}
-			50% {
-				transform: translateX(20px); /* Oscila para os lados */
-			}
-		}
-		
-	#snow-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		pointer-events: none;
-		z-index: 9999;
-	}
-	
-	.snowflake {
-		position: absolute;
-		top: -10px;
-		color: white;
-		font-size: 1em;
-		opacity: 0.8;
-		user-select: none;
-		animation: fall linear infinite, sway ease-in-out infinite;
-	}
-	
-	@keyframes fall {
-		0% {
-			top: -10px;
-		}
-		100% {
-			top: 110vh;
-		}
-	}
-	
-	@keyframes sway {
-		0%, 100% {
-			transform: translateX(0);
-		}
-		50% {
-			transform: translateX(20px);
-		}
-	}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#0a0a14" />
 
-	.menu-items
-	{
-		--max-width: 1280px;
-		margin: 0 auto;
-		padding: 0 16px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 10px;
-		--min-height: 80px;
-	}
+	<title>Amerika — High Five PvP Server | Lineage 2</title>
+	<meta name="description" content="Amerika, o servidor PvP High Five mais respeitado. 17 anos online, sem wipes, eventos automáticos, sieges e Territory Wars." />
 
-	.menu-links
-	{
-		display: flex !important;
-		align-items: center;
-		gap: 10px;
-	}
+	<meta property="og:title" content="Amerika - High Five PvP Server" />
+	<meta property="og:description" content="A verdadeira essência do L2 PvP: 17 anos online, sem wipes, eventos automáticos." />
+	<meta property="og:url" content="https://www.l2amerika.com" />
+	<meta property="og:site_name" content="Amerika" />
+	<meta property="og:type" content="website" />
 
-	.menu-link
-	{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 6px;
-		padding: 8px 0px;
-		margin: 0;
-		border: 0 solid rgba(212, 175, 55, 0.2);
-		box-sizing: border-box;
-		color: rgba(241, 245, 249, 0.85) !important;
-		cursor: pointer;
-		font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif !important;
-		font-size: 12px;
-		font-weight: 500;
-		letter-spacing: 0.9px;
-		line-height: 18px;
-		text-decoration: none !important;
-		text-transform: uppercase;
-		white-space: nowrap;
-		transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-		-webkit-font-smoothing: antialiased;
-	}
+	<link rel="shortcut icon" href="https://www.l2amerika.com/imgs/favicon.ico" />
 
-	.menu-link:hover
-	{
-		color: rgba(203, 168, 54, 1) !important;
-		text-decoration: none !important;
-	}
+	<!-- Fontes -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet" />
 
-	.logo-link
-	{
-		display: inline-flex;
-		align-items: center;
-		margin-right: 8px;
-	}
+	<!-- Font Awesome para ícones -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-	.logo-menu
-	{
-		max-height: 48px;
-		width: auto;
-	}
-
-	.server-install
-	{
-		display: flex;
-		align-items: center;
-	}
-
-	.server-install > div
-	{
-		display: flex !important;
-		align-items: center;
-		gap: 16px;
-	}
-
-	.button-login,
-	.button-install
-	{
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 6px;
-		padding: 9px 16px;
-		border-radius: 4px;
-		font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif !important;
-		font-size: 10px;
-		font-weight: 400;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		text-decoration: none !important;
-		transition: all 0.3s ease;
-	}
-
-	.button-login
-	{
-		background: rgba(255, 255, 255, 0.03);
-		color: #fff !important;
-		border: 1px solid rgba(212, 175, 55, 0.40);
-	}
-
-	.button-login:hover
-	{
-		background: rgba(212, 175, 55, 0.10);
-		border-color: #d4af37;
-		box-shadow: 0 0 10px rgba(212, 175, 55, 0.20);
-		color: #fff !important;
-	}
-
-	.button-install
-	{
-		background: #d4af37;
-		color: #000 !important;
-		border: 1px solid #d4af37;
-		box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.40);
-		animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-	}
-
-	.button-install:hover
-	{
-		filter: brightness(1.1);
-		color: #000 !important;
-	}
-
-	.Topbar
-	{
-		display: block;
-		width: 100%;
-	}
-
-	.topbar-container
-	{
-		--max-width: 1280px;
-		margin: 0 auto;
-		padding: 0 16px;
-		min-height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 10px;
-	}
-
-	.topbar-links
-	{
-		display: flex !important;
-		align-items: center !important;
-		gap: 10px !important;
-		flex-wrap: wrap !important;
-	}
-	
-	.sub-menu-link,
-	.discord-link,
-	.community-text
-	{
-		display: flex;
-		align-items: center;
-		gap: 6px;
-		padding: 8px 6px;
-		margin: 0;
-		border: 0 solid rgba(212, 175, 55, 0.2);
-		box-sizing: border-box;
-		color: rgba(241, 245, 249, 0.7) !important;
-		cursor: pointer;
-		font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif !important;
-		font-size: 10px;
-		font-weight: 400;
-		letter-spacing: 0.3px;
-		line-height: 16px;
-		text-decoration: none !important;
-		transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-		-webkit-font-smoothing: antialiased;
-	}
-
-	.sub-menu-link:hover,
-	.discord-link:hover
-	{
-		color: rgba(203, 168, 54, 1) !important;
-		text-decoration: none !important;
-	}
-
-	.server-stats > div
-	{
-		display: flex !important;
-		align-items: center;
-		gap: 8px;
-		padding: 4px;
-		background: rgba(14, 14, 14, 0.4);
-		backdrop-filter: blur(8px);
-		-webkit-backdrop-filter: blur(8px);
-		border-radius: 999px;
-		border: 1px solid rgba(255, 255, 255, 0.06);
-	}
-
-	.server-stats a
-	{
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 28px;
-		height: 28px;
-		margin-right: 0 !important;
-		border-radius: 999px;
-		overflow: hidden;
-		border: 1px solid transparent;
-		background: transparent;
-		opacity: 0.55;
-		transition: all 0.2s ease;
-		flex-shrink: 0;
-	}
-
-	.server-stats a:hover
-	{
-		opacity: 1;
-		transform: scale(1.08);
-		border-color: rgba(242, 202, 80, 0.4);
-		box-shadow: 0 0 12px rgba(212, 175, 55, 0.18);
-	}
-
-	.server-stats img
-	{
-		width: 100% !important;
-		height: 100% !important;
-		object-fit: cover;
-		display: block;
-	}
-
-	.menu-mobile
-	{
-		display: none;
-		width: 100%;
-	}
-
-	.mobile-header
-	{
-		display: none;
-	}
-
-	.hamburger
-	{
-		display: none;
-		background: transparent;
-		border: 0;
-		color: #fff;
-		font-size: 28px;
-		line-height: 1;
-		padding: 0;
-		cursor: pointer;
-	}
-
-	.logo-hamburger
-	{
-		display: inline-flex;
-		align-items: center;
-	}
-
-	.logo-menu-hamburger
-	{
-		max-height: 42px;
-		width: auto;
-	}
-
-	@keyframes pulse-glow
-	{
-		0%, 100%
-		{
-			box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.40);
-		}
-		50%
-		{
-			box-shadow: 0 0 20px 5px rgba(212, 175, 55, 0.60);
-		}
-	}
-@media (max-width: 767px)
-{
-	.mobile-header
-	{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	.hamburger
-	{
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.menu-links
-	{
-		display: none !important;
-	}
-
-	.button-install
-	{
-		display: none !important;
-	}
-
-	.menu-mobile
-	{
-		display: block;
-		width: 100%;
-	}
-
-	.menu-items
-	{
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 8px;
-	}
-	
-	.server-install
-	{
-		order: 2;
-		margin-left: -15px;
-		margin-right: auto;
-	}
-
-	.server-install > div
-	{
-		display: flex !important;
-		align-items: center;
-		justify-content: flex-start;
-		gap: 10px;
-	}
-
-	.button-login
-	{
-		padding: 8px 12px;
-		font-size: 10px;
-	}
-
-	.Topbar
-	{
-		width: 100%;
-	}
-
-	.topbar-container
-	{
-		padding: 0 0px;
-		min-height: 44px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 8px;
-		flex-wrap: nowrap;
-	}
-
-	.topbar-links
-	{
-		display: flex !important;
-		align-items: center !important;
-		gap: 10px !important;
-		flex-wrap: nowrap !important;
-		overflow-x: auto;
-		white-space: nowrap;
-		flex: 1;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-	}
-
-	.topbar-links::-webkit-scrollbar
-	{
-		display: none;
-	}
-
-	.topbar-links .sub-menu-link:nth-child(1),
-	.topbar-links .sub-menu-link:nth-child(2)
-	{
-		display: none !important;
-	}
-
-	.sub-menu-link
-	{
-		padding: 6px 4px;
-		font-size: 10px;
-		gap: 4px;
-		flex: 0 0 auto;
-	}
-
-	.server-stats
-	{
-		order: -1;
-		flex-shrink: 0;
-		margin-right: -15px;
-	}
-
-	.server-stats > div
-	{
-		display: flex !important;
-		align-items: center;
-		gap: 4px;
-		padding: 2px 4px;
-	}
-
-	.server-stats a
-	{
-		width: 24px;
-		height: 24px;
-	}
-}
-		</style>
-		
-		<!-- Google tag (gtag.js) -->
-		<!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-09NRLB8Q00"></script>-->
-		<!--<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-09NRLB8Q00');
-		</script>-->
-		
-		<!-- Google tag (gtag.js) - TAG NOVA -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-KLZ8RMK7JE" type="81c0c91b339f60135225285c-text/javascript"></script>
-		<script type="81c0c91b339f60135225285c-text/javascript">
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KLZ8RMK7JE"></script>
+	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		
 		gtag('config', 'G-KLZ8RMK7JE');
-		</script>
-		
-		<!-- Google Tag Manager Conversoes -->
-		<script type="81c0c91b339f60135225285c-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	</script>
+
+	<!-- GTM -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-MJHJZSGB');</script>
-		<!-- End Google Tag Manager -->
 
-		<!-- ==========================================================
-		     AMERIKA — Modernização Visual (tokens + overrides)
-		     ========================================================== -->
-		<style id="amerika-modernization">
-		:root {
-			--bg-900: #0a0a0c;
-			--bg-800: #111114;
-			--bg-700: #1a1a20;
-			--surface-glass: rgba(20, 20, 25, 0.55);
-			--surface-glass-strong: rgba(15, 15, 20, 0.72);
-			--hairline: rgba(255, 255, 255, 0.08);
-			--hairline-gold: rgba(212, 175, 55, 0.28);
-
-			--gold-300: #f2ca50;
-			--gold-400: #e6c450;
-			--gold-500: #d4af37;
-			--gold-600: #a8861f;
-			--gold-glow: rgba(212, 175, 55, 0.45);
-			--gold-glow-soft: rgba(212, 175, 55, 0.20);
-
-			--status-online: #22c55e;
-			--status-online-glow: rgba(34, 197, 94, 0.55);
-			--status-offline: #ef4444;
-			--status-offline-glow: rgba(239, 68, 68, 0.4);
-
-			--text-primary: rgba(245, 245, 250, 0.95);
-			--text-secondary: rgba(241, 245, 249, 0.7);
-
-			--font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-
-			--radius-sm: 6px;
-			--radius-md: 10px;
-			--radius-lg: 16px;
-			--radius-pill: 999px;
-
-			--shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.45);
-			--shadow-card: 0 12px 40px rgba(0, 0, 0, 0.55);
-			--shadow-gold: 0 0 24px var(--gold-glow);
-			--shadow-gold-strong: 0 0 36px var(--gold-glow), 0 0 12px var(--gold-glow);
-
-			--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-			--t-fast: 180ms;
-			--t-base: 240ms;
-		}
-
-		/* Focus visível dourado em todos os interativos */
-		a:focus-visible,
-		button:focus-visible,
-		[role="button"]:focus-visible {
-			outline: 2px solid var(--gold-400) !important;
-			outline-offset: 2px;
-			border-radius: var(--radius-sm);
-		}
-
-		/* Respeita prefers-reduced-motion */
-		@media (prefers-reduced-motion: reduce) {
-			*, *::before, *::after {
-				animation-duration: 0.01ms !important;
-				animation-iteration-count: 1 !important;
-				transition-duration: 0.01ms !important;
-				scroll-behavior: auto !important;
-			}
-		}
-
-		/* ===== Menu sticky com blur ao scrollar ===== */
-		.Top_Menu {
-			position: sticky;
-			top: 0;
-			z-index: 1000;
-			transition: background var(--t-base) var(--ease-out),
-			            backdrop-filter var(--t-base) var(--ease-out),
-			            border-color var(--t-base) var(--ease-out),
-			            box-shadow var(--t-base) var(--ease-out);
-			border-bottom: 1px solid transparent;
-		}
-		.Top_Menu.is-scrolled {
-			background: rgba(10, 10, 12, 0.78);
-			backdrop-filter: blur(14px) saturate(140%);
-			-webkit-backdrop-filter: blur(14px) saturate(140%);
-			border-bottom-color: var(--hairline-gold);
-			box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-		}
-
-		/* Underline animado nos links do menu principal */
-		.menu-link { position: relative; }
-		.menu-link::after {
-			content: "";
-			position: absolute;
-			left: 8px;
-			right: 8px;
-			bottom: 2px;
-			height: 1px;
-			background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
-			transform: scaleX(0);
-			transform-origin: center;
-			transition: transform var(--t-base) var(--ease-out);
-		}
-		.menu-link:hover::after { transform: scaleX(1); }
-
-		/* Botão Install — pulse mais sutil que o original */
-		.button-install {
-			animation: pulse-glow-soft 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
-		}
-		@keyframes pulse-glow-soft {
-			0%, 100% { box-shadow: 0 0 0 0 var(--gold-glow-soft); }
-			50%      { box-shadow: 0 0 18px 4px var(--gold-glow); }
-		}
-
-		/* Topbar — separador inferior + chips de idioma */
-		.topbar-container { border-bottom: 1px solid var(--hairline); }
-		.server-stats a { border: 1px solid transparent !important; }
-		.server-stats a:hover {
-			border-color: var(--hairline-gold) !important;
-			box-shadow: 0 0 12px var(--gold-glow-soft) !important;
-		}
-
-		/* ===== HERO — overlay legível sobre o vídeo ===== */
-		.hero-overlay {
-			position: absolute;
-			inset: 0;
-			background:
-				linear-gradient(180deg, rgba(10, 10, 12, 0.15) 0%, rgba(10, 10, 12, 0.85) 100%),
-				linear-gradient(90deg, rgba(10, 10, 12, 0.65) 0%, transparent 55%);
-			pointer-events: none;
-			z-index: 1;
-		}
-		section.bg-cover > .container { position: relative; z-index: 2; }
-
-		.decorativeText {
-			letter-spacing: 0.04em;
-			transition: text-shadow var(--t-base) var(--ease-out);
-		}
-		.decorativeText:hover { text-shadow: 0 0 24px var(--gold-glow); }
-
-		.decorativeText2 { position: relative; }
-		.decorativeText2::before {
-			content: "";
-			display: block;
-			width: 56px;
-			height: 2px;
-			background: linear-gradient(90deg, var(--gold-500), transparent);
-			margin-bottom: 12px;
-		}
-
-		/* Badges do hero */
-		.hero-badges {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 10px;
-			margin-top: 18px;
-			max-width: 560px;
-		}
-		.hero-badge {
-			display: inline-flex;
-			align-items: center;
-			gap: 8px;
-			padding: 6px 12px;
-			font-family: var(--font-display);
-			font-size: 11px;
-			font-weight: 500;
-			letter-spacing: 0.12em;
-			text-transform: uppercase;
-			color: var(--text-primary);
-			background: var(--surface-glass);
-			border: 1px solid var(--hairline-gold);
-			border-radius: var(--radius-pill);
-			backdrop-filter: blur(10px) saturate(140%);
-			-webkit-backdrop-filter: blur(10px) saturate(140%);
-		}
-		.hero-badge i { color: var(--gold-400); }
-		.hero-badge .dot {
-			width: 8px; height: 8px;
-			border-radius: 50%;
-			background: var(--status-online);
-			box-shadow: 0 0 10px var(--status-online-glow);
-			animation: pulse-dot 1.8s ease-in-out infinite;
-		}
-
-		/* CTA secundário no hero */
-		.header__info-buttons-register { gap: 12px; }
-		.button-secondary {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			gap: 8px;
-			padding: 12px 22px;
-			font-family: var(--font-display);
-			font-size: 12px;
-			font-weight: 500;
-			letter-spacing: 0.14em;
-			text-transform: uppercase;
-			color: var(--text-primary) !important;
-			background: transparent;
-			border: 1px solid var(--hairline-gold);
-			border-radius: var(--radius-sm);
-			text-decoration: none !important;
-			transition: all var(--t-base) var(--ease-out);
-		}
-		.button-secondary:hover {
-			border-color: var(--gold-500);
-			background: rgba(212, 175, 55, 0.08);
-			box-shadow: var(--shadow-gold);
-			transform: translateY(-1px);
-			color: var(--text-primary) !important;
-		}
-
-		/* ===== SERVER ORBS — glass real + status semafórico ===== */
-		.server-card {
-			background: var(--surface-glass-strong) !important;
-			backdrop-filter: blur(18px) saturate(140%) !important;
-			-webkit-backdrop-filter: blur(18px) saturate(140%) !important;
-			border: 1px solid var(--hairline-gold) !important;
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.08),
-				var(--shadow-card) !important;
-			position: relative;
-			overflow: hidden;
-		}
-		.server-card::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			border-radius: inherit;
-			background: radial-gradient(circle at 50% 0%, var(--gold-glow-soft), transparent 60%);
-			pointer-events: none;
-		}
-
-		.server-orb-main .server-card h4.text-primary-rate {
-			background: linear-gradient(180deg, var(--gold-300), var(--gold-600));
-			-webkit-background-clip: text;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			color: transparent !important;
-			font-weight: 800;
-		}
-
-		.server-orb-ring { border-color: var(--hairline-gold) !important; }
-
-		.server-status { gap: 6px; }
-		.server-status .status-dot {
-			width: 7px;
-			height: 7px;
-			border-radius: 50%;
-			display: inline-block;
-		}
-		.server-status.online .status-dot {
-			background: var(--status-online);
-			box-shadow: 0 0 8px var(--status-online-glow);
-			animation: pulse-dot 1.8s ease-in-out infinite;
-		}
-		.server-status.offline { opacity: 0.78; }
-		.server-status.offline .status-dot {
-			background: var(--status-offline);
-			box-shadow: 0 0 6px var(--status-offline-glow);
-		}
-		@keyframes pulse-dot {
-			0%, 100% { transform: scale(1);   opacity: 1;   }
-			50%      { transform: scale(1.45); opacity: 0.55; }
-		}
-
-		.server-orb-beta .server-card { opacity: 0.82; }
-
-		/* ===== CAROUSEL — play overlay + setas glass ===== */
-		.swiper-slide { position: relative; }
-		.carousel-thumb {
-			border-radius: var(--radius-md) !important;
-			transition: transform var(--t-base) var(--ease-out),
-			            box-shadow var(--t-base) var(--ease-out),
-			            filter var(--t-base) var(--ease-out) !important;
-		}
-		.swiper-slide a {
-			position: relative;
-			display: block;
-			border-radius: var(--radius-md);
-			overflow: hidden;
-		}
-		.swiper-slide a::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);
-			opacity: 0;
-			transition: opacity var(--t-base) var(--ease-out);
-			z-index: 1;
-			pointer-events: none;
-		}
-		.swiper-slide a::after {
-			content: "";
-			position: absolute;
-			top: 50%; left: 50%;
-			width: 56px; height: 56px;
-			margin: -28px 0 0 -28px;
-			border-radius: 50%;
-			background: var(--gold-500) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'><path d='M8 5v14l11-7z'/></svg>") no-repeat center / 22px 22px;
-			box-shadow: var(--shadow-gold-strong);
-			transform: scale(0.6);
-			opacity: 0;
-			transition: transform var(--t-base) var(--ease-out),
-			            opacity var(--t-base) var(--ease-out);
-			z-index: 2;
-			pointer-events: none;
-		}
-		.swiper-slide a:hover::before { opacity: 1; }
-		.swiper-slide a:hover::after  { opacity: 1; transform: scale(1); }
-		.swiper-slide a:hover .carousel-thumb {
-			transform: translateY(-3px) scale(1.02) !important;
-			box-shadow: var(--shadow-card) !important;
-			filter: brightness(1.05);
-		}
-
-		.swiper-button-prev,
-		.swiper-button-next {
-			width: 44px !important;
-			height: 44px !important;
-			border-radius: 50% !important;
-			background: var(--surface-glass) !important;
-			backdrop-filter: blur(10px) saturate(140%);
-			-webkit-backdrop-filter: blur(10px) saturate(140%);
-			border: 1px solid var(--hairline-gold) !important;
-			box-shadow: var(--shadow-soft) !important;
-			transition: background var(--t-base) var(--ease-out),
-			            border-color var(--t-base) var(--ease-out),
-			            box-shadow var(--t-base) var(--ease-out),
-			            transform var(--t-base) var(--ease-out) !important;
-		}
-		.swiper-button-prev:hover,
-		.swiper-button-next:hover {
-			border-color: var(--gold-500) !important;
-			background: rgba(212, 175, 55, 0.12) !important;
-			box-shadow: var(--shadow-gold) !important;
-		}
-		.swiper-button-next::after,
-		.swiper-button-prev::after {
-			font-size: 14px !important;
-			color: var(--gold-400) !important;
-			font-weight: 700 !important;
-		}
-
-		/* ===== DISCORD FLOAT — glass com ring + dot online ===== */
-		.discord-float {
-			background: var(--surface-glass-strong) !important;
-			border: 1px solid rgba(88, 101, 242, 0.55);
-			backdrop-filter: blur(14px) saturate(140%);
-			-webkit-backdrop-filter: blur(14px) saturate(140%);
-			box-shadow:
-				0 8px 28px rgba(0, 0, 0, 0.55),
-				inset 0 0 0 1px rgba(255, 255, 255, 0.04) !important;
-		}
-		.discord-float:hover {
-			border-color: rgba(88, 101, 242, 0.9);
-			box-shadow:
-				0 12px 32px rgba(0, 0, 0, 0.6),
-				0 0 24px rgba(88, 101, 242, 0.35) !important;
-		}
-		.discord-float svg {
-			filter: drop-shadow(0 0 4px rgba(88, 101, 242, 0.6));
-		}
-		.discord-float::before {
-			content: "";
-			width: 8px;
-			height: 8px;
-			border-radius: 50%;
-			background: var(--status-online);
-			box-shadow: 0 0 8px var(--status-online-glow);
-			animation: pulse-dot 1.8s ease-in-out infinite;
-			margin-right: 2px;
-			flex-shrink: 0;
-		}
-		@media (max-width: 480px) {
-			.discord-float span { display: none; }
-			.discord-float { padding: 12px !important; }
-		}
-
-		/* ===== Cards Wiki — bento premium ===== */
-		.boxWiki {
-			position: relative;
-			border-radius: var(--radius-lg);
-			overflow: hidden;
-			min-height: 220px;
-			transition: transform var(--t-base) var(--ease-out),
-			            box-shadow var(--t-base) var(--ease-out),
-			            border-color var(--t-base) var(--ease-out);
-			border: 1px solid var(--hairline) !important;
-			box-shadow: var(--shadow-soft);
-			isolation: isolate;
-		}
-		.boxWiki::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background: linear-gradient(180deg, transparent 30%, rgba(10,10,12,0.75) 80%, rgba(10,10,12,0.95) 100%);
-			z-index: 1;
-			transition: opacity var(--t-base) var(--ease-out);
-		}
-		.boxWiki::after {
-			content: "→";
-			position: absolute;
-			top: 14px;
-			right: 14px;
-			width: 32px;
-			height: 32px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			background: var(--gold-500);
-			color: #000;
-			font-weight: 800;
-			font-size: 16px;
-			opacity: 0;
-			transform: translate(-6px, 6px);
-			transition: all var(--t-base) var(--ease-out);
-			z-index: 3;
-			box-shadow: var(--shadow-gold);
-		}
-		.boxWiki:hover {
-			transform: translateY(-6px);
-			border-color: var(--hairline-gold) !important;
-			box-shadow: var(--shadow-gold), var(--shadow-card);
-		}
-		.boxWiki:hover::after {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
-		.boxWiki > div {
-			position: relative;
-			z-index: 2;
-		}
-
-		/* ==========================================================
-		   AMPLIAÇÃO — Atmosfera, tipografia épica, micro-interações
-		   ========================================================== */
-
-		/* Background ambiente — dourado radial + grão */
-		body {
-			background-color: var(--bg-900);
-			background-image:
-				radial-gradient(ellipse 80% 60% at 50% -10%, rgba(212, 175, 55, 0.10), transparent 60%),
-				radial-gradient(ellipse 60% 50% at 100% 100%, rgba(212, 175, 55, 0.06), transparent 60%),
-				radial-gradient(ellipse 60% 50% at 0% 60%, rgba(99, 102, 241, 0.04), transparent 60%);
-			background-attachment: fixed;
-			color: var(--text-primary);
-		}
-		body::before {
-			content: "";
-			position: fixed;
-			inset: 0;
-			pointer-events: none;
-			z-index: 0;
-			opacity: 0.35;
-			mix-blend-mode: overlay;
-			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/></svg>");
-		}
-
-		/* Tipografia global */
-		html, body { font-family: var(--font-display); }
-		h1, h2, h3, .decorativeText { font-family: 'Cinzel', 'Space Grotesk', serif; }
-
-		/* ===== HERO épico ===== */
-		section.bg-cover { overflow: hidden; }
-		section.bg-cover video { z-index: 0; }
-		section.bg-cover::after {
-			content: "";
-			position: absolute;
-			top: -120px; right: -120px;
-			width: 520px; height: 520px;
-			border-radius: 50%;
-			background: radial-gradient(circle, var(--gold-glow) 0%, transparent 65%);
-			pointer-events: none;
-			z-index: 1;
-			animation: ambient-pulse 8s ease-in-out infinite;
-		}
-		@keyframes ambient-pulse {
-			0%, 100% { transform: scale(1);   opacity: 0.55; }
-			50%      { transform: scale(1.18); opacity: 0.85; }
-		}
-
-		.hero-overlay {
-			background:
-				linear-gradient(180deg, rgba(10, 10, 12, 0.05) 0%, rgba(10, 10, 12, 0.55) 50%, rgba(10, 10, 12, 0.95) 100%),
-				linear-gradient(90deg, rgba(10, 10, 12, 0.75) 0%, rgba(10,10,12,0.2) 60%, transparent 100%);
-		}
-
-		/* Título AMERIKA gigante + animado */
-		.decorativeText {
-			font-family: 'Cinzel', serif !important;
-			font-weight: 900 !important;
-			font-size: clamp(72px, 12vw, 180px) !important;
-			letter-spacing: 0.06em !important;
-			line-height: 0.9 !important;
-			-webkit-text-stroke: 1.5px var(--gold-500);
-			color: transparent !important;
-			text-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
-			animation: hero-fade-up 1s var(--ease-out) both;
-		}
-		.decorativeText2 {
-			font-family: 'Cinzel', serif !important;
-			font-weight: 700 !important;
-			font-size: clamp(28px, 4vw, 56px) !important;
-			letter-spacing: 0.15em !important;
-			background: linear-gradient(180deg, #fff 0%, var(--gold-400) 100%);
-			-webkit-background-clip: text;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			text-transform: uppercase;
-			animation: hero-fade-up 1s var(--ease-out) 0.15s both;
-		}
-		.decorativeText2::before {
-			width: 80px;
-			height: 3px;
-			background: linear-gradient(90deg, var(--gold-500), transparent);
-			margin-bottom: 18px;
-			box-shadow: 0 0 12px var(--gold-glow);
-		}
-		.text-base {
-			color: var(--text-secondary) !important;
-			font-size: 16px !important;
-			line-height: 1.7 !important;
-			max-width: 540px;
-			animation: hero-fade-up 1s var(--ease-out) 0.3s both;
-		}
-		.hero-badges { animation: hero-fade-up 1s var(--ease-out) 0.45s both; }
-		.header__info-buttons-register { animation: hero-fade-up 1s var(--ease-out) 0.6s both; }
-
-		@keyframes hero-fade-up {
-			from { opacity: 0; transform: translateY(24px); }
-			to   { opacity: 1; transform: translateY(0); }
-		}
-
-		/* CTA primário (button-new) com shine sweep e gradiente forte */
-		.button-new {
-			position: relative;
-			overflow: hidden;
-			background: linear-gradient(135deg, var(--gold-400), var(--gold-500) 50%, var(--gold-600)) !important;
-			color: #0a0a0c !important;
-			font-family: var(--font-display) !important;
-			font-weight: 700 !important;
-			letter-spacing: 0.16em !important;
-			padding: 14px 32px !important;
-			border-radius: var(--radius-sm) !important;
-			border: 1px solid var(--gold-400) !important;
-			box-shadow:
-				0 8px 24px rgba(212, 175, 55, 0.35),
-				inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
-			text-transform: uppercase !important;
-			transition: all var(--t-base) var(--ease-out) !important;
-		}
-		.button-new::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: -120%;
-			width: 60%;
-			height: 100%;
-			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
-			transform: skewX(-25deg);
-			transition: left 0.7s var(--ease-out);
-			pointer-events: none;
-		}
-		.button-new:hover {
-			transform: translateY(-2px);
-			box-shadow:
-				0 14px 36px rgba(212, 175, 55, 0.5),
-				inset 0 1px 0 rgba(255, 255, 255, 0.45),
-				0 0 0 1px var(--gold-400) !important;
-			filter: brightness(1.05);
-		}
-		.button-new:hover::after { left: 150%; }
-
-		.button-secondary { padding: 14px 28px !important; font-size: 12px !important; }
-
-		/* ===== STATS strip ===== */
-		.stats-strip {
-			position: relative;
-			z-index: 5;
-			margin: -40px auto 40px;
-			max-width: 1100px;
-			padding: 0 24px;
-		}
-		.stats-strip-inner {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 0;
-			background: var(--surface-glass-strong);
-			backdrop-filter: blur(20px) saturate(160%);
-			-webkit-backdrop-filter: blur(20px) saturate(160%);
-			border: 1px solid var(--hairline-gold);
-			border-radius: var(--radius-lg);
-			box-shadow:
-				inset 0 1px 0 rgba(255, 255, 255, 0.06),
-				var(--shadow-card);
-			overflow: hidden;
-		}
-		.stats-strip-item {
-			padding: 22px 18px;
-			text-align: center;
-			border-right: 1px solid var(--hairline);
-		}
-		.stats-strip-item:last-child { border-right: 0; }
-		.stats-strip-number {
-			font-family: 'Cinzel', serif;
-			font-size: clamp(28px, 3vw, 40px);
-			font-weight: 800;
-			background: linear-gradient(180deg, var(--gold-300), var(--gold-600));
-			-webkit-background-clip: text;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			line-height: 1.1;
-		}
-		.stats-strip-label {
-			margin-top: 6px;
-			font-size: 11px;
-			letter-spacing: 0.16em;
-			text-transform: uppercase;
-			color: var(--text-secondary);
-		}
-		@media (max-width: 720px) {
-			.stats-strip { margin-top: -20px; }
-			.stats-strip-inner { grid-template-columns: repeat(2, 1fr); }
-			.stats-strip-item:nth-child(2) { border-right: 0; }
-			.stats-strip-item:nth-child(1),
-			.stats-strip-item:nth-child(2) { border-bottom: 1px solid var(--hairline); }
-			.stats-strip-number { font-size: 24px; }
-			.stats-strip-label { font-size: 10px; }
-		}
-
-		/* ===== Server orbs — maiores e com halo ===== */
-		.server-orb {
-			width: 220px !important;
-			height: 220px !important;
-		}
-		.server-orb-main::before {
-			content: "";
-			position: absolute;
-			inset: -30px;
-			border-radius: 50%;
-			background: radial-gradient(circle, var(--gold-glow) 0%, transparent 60%);
-			pointer-events: none;
-			animation: ambient-pulse 6s ease-in-out infinite;
-			z-index: -1;
-		}
-		.server-card { width: 168px !important; height: 168px !important; }
-		.server-card h4 {
-			font-family: 'Cinzel', serif !important;
-			font-size: 30px !important;
-		}
-		.server-card p {
-			font-size: 11px !important;
-			letter-spacing: 0.22em !important;
-			color: var(--text-secondary) !important;
-			opacity: 1 !important;
-		}
-		.server-status {
-			background: var(--bg-900) !important;
-			padding: 5px 14px !important;
-			font-weight: 600 !important;
-		}
-		.server-status.online {
-			color: var(--status-online) !important;
-			border-color: rgba(34, 197, 94, 0.5) !important;
-			background: rgba(34, 197, 94, 0.12) !important;
-		}
-		.server-status.offline {
-			color: var(--status-offline) !important;
-			border-color: rgba(239, 68, 68, 0.4) !important;
-			background: rgba(239, 68, 68, 0.10) !important;
-		}
-		@media (max-width: 834px) {
-			.server-orb { width: 160px !important; height: 160px !important; }
-			.server-card { width: 124px !important; height: 124px !important; }
-			.server-card h4 { font-size: 22px !important; }
-		}
-
-		/* ===== Ornaments de seção (substitui top_separator) ===== */
-		.top_separator {
-			position: relative;
-			height: 60px;
-			background: none !important;
-		}
-		.top_separator::before {
-			content: "";
-			position: absolute;
-			top: 50%; left: 50%;
-			transform: translate(-50%, -50%);
-			width: min(60%, 600px);
-			height: 1px;
-			background: linear-gradient(90deg, transparent, var(--hairline-gold), transparent);
-		}
-		.top_separator::after {
-			content: "✦";
-			position: absolute;
-			top: 50%; left: 50%;
-			transform: translate(-50%, -50%);
-			color: var(--gold-500);
-			font-size: 14px;
-			background: var(--bg-900);
-			padding: 0 14px;
-			text-shadow: 0 0 12px var(--gold-glow);
-		}
-
-		/* ===== Títulos de seção ===== */
-		.title {
-			font-family: 'Cinzel', serif !important;
-			font-size: clamp(32px, 4.5vw, 56px) !important;
-			font-weight: 800 !important;
-			letter-spacing: 0.08em !important;
-			background: linear-gradient(180deg, #fff 0%, var(--gold-400) 100%);
-			-webkit-background-clip: text;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			position: relative;
-		}
-		.title::before {
-			content: "HIGHLIGHTS";
-			display: block;
-			font-family: var(--font-display);
-			font-size: 11px;
-			font-weight: 600;
-			letter-spacing: 0.4em;
-			color: var(--gold-500);
-			-webkit-text-fill-color: var(--gold-500);
-			margin-bottom: 14px;
-			opacity: 0.9;
-		}
-		.middleContent h2,
-		.wiki h2 {
-			font-family: 'Cinzel', serif !important;
-			font-size: clamp(28px, 4vw, 48px) !important;
-			font-weight: 800 !important;
-			letter-spacing: 0.06em !important;
-			background: linear-gradient(180deg, #fff 0%, var(--gold-400) 100%);
-			-webkit-background-clip: text;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			color: transparent !important;
-		}
-		.middleContent h4,
-		.wiki h4 {
-			color: var(--text-secondary) !important;
-			line-height: 1.7 !important;
-		}
-
-		/* ===== Create content section — card vidro ===== */
-		.middleContent .container_wiki {
-			background: var(--surface-glass);
-			backdrop-filter: blur(16px) saturate(140%);
-			-webkit-backdrop-filter: blur(16px) saturate(140%);
-			border: 1px solid var(--hairline);
-			border-radius: var(--radius-lg);
-			box-shadow: var(--shadow-soft);
-			max-width: 1200px;
-		}
-
-		/* ===== Footer refinado ===== */
-		.custom-footer {
-			border-top: 1px solid var(--hairline-gold);
-			background: rgba(10, 10, 12, 0.6);
-			backdrop-filter: blur(12px);
-		}
-		.social-icons-container a {
-			display: inline-flex;
-			width: 44px; height: 44px;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			border: 1px solid var(--hairline);
-			margin: 0 6px;
-			transition: all var(--t-base) var(--ease-out);
-		}
-		.social-icons-container a:hover {
-			border-color: var(--gold-500);
-			box-shadow: var(--shadow-gold);
-			transform: translateY(-2px);
-		}
-		.social-icon { width: 22px !important; height: auto; }
-		.footer-text { color: var(--text-secondary); font-size: 12px; letter-spacing: 0.04em; }
-
-		/* ===== Scroll reveal ===== */
-		.reveal {
-			opacity: 0;
-			transform: translateY(30px);
-			transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
-			will-change: opacity, transform;
-		}
-		.reveal.is-visible {
-			opacity: 1;
-			transform: translateY(0);
-		}
-
-		/* ===== Container central ===== */
-		.container, .container_wiki { position: relative; z-index: 2; }
-		</style>
-
-    </head>
-	<body>
-	
-	<!-- Google Tag Manager (noscript)conversoes  -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJHJZSGB"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	
-	<div id="snow-container"></div> <!-- Contêiner para a neve -->
-	<script type="81c0c91b339f60135225285c-text/javascript">
-		const snowContainer = document.getElementById("snow-container");
-	
-		// Verifica se a data atual está entre 1 e 31 de dezembro
-		const now = new Date();
-		const isDecember = now.getMonth() === 11; // 11 é o índice para dezembro (0 = janeiro)
-	
-		if (isDecember && now.getDate() >= 1 && now.getDate() <= 31) {
-			startSnowEffect();
-		}
-	
-		function startSnowEffect() {
-			function createSnowflake() {
-				const snowflake = document.createElement("div");
-				snowflake.classList.add("snowflake");
-				snowflake.innerHTML = "&#10052;"; // Código do floco de neve (❄)
-	
-				// Configurações aleatórias
-				snowflake.style.left = Math.random() * 100 + "vw"; // Posição horizontal aleatória
-				snowflake.style.animationDuration = Math.random() * 5 + 3 + "s"; // Duração total (3s a 8s)
-				snowflake.style.animationDelay = Math.random() * 3 + "s"; // Atraso inicial aleatório
-				snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // Tamanho entre 10px e 20px
-				snowflake.style.opacity = Math.random() * 0.5 + 0.5; // Opacidade entre 0.5 e 1
-	
-				// Adiciona o floco ao contêiner
-				snowContainer.appendChild(snowflake);
-	
-				// Remove o floco após a animação terminar
-				setTimeout(() => {
-					snowflake.remove();
-				}, parseFloat(snowflake.style.animationDuration) * 1000); // Converte duração em milissegundos
-			}
-	
-			// Cria flocos a cada 300ms
-			setInterval(createSnowflake, 300);
-		}
-	</script>
-	
-<script type="81c0c91b339f60135225285c-text/javascript">
-    window.onload = function() {
-        setupInitialState();
-    }
-
-    function setupInitialState() {
-        var mobileMenu = document.querySelector('.menu-mobile .boxMenuPanelMobile');
-
-        if (mobileMenu) {
-            mobileMenu.style.display = "none";
-        }
-    }
-
-    function toggleMenu() {
-        var mobileMenu = document.querySelector('.menu-mobile .boxMenuPanelMobile');
-
-        if (mobileMenu) {
-            if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
-                mobileMenu.style.display = "block";
-            } else {
-                mobileMenu.style.display = "none";
-            }
-        }
-    }
-</script>
-		<div>
-			<nav class="Top_Menu">
-				<div class="menu-items">
-					<!-- Mobile Header -->
-					<div class="mobile-header">
-						<a class="logo-hamburger" href="index.html"><img class="logo-menu-hamburger" alt="Amerika" src="https://www.l2amerika.com/images/amerika_logo_mini_3.png" /></a>
-						<button class="hamburger" onclick="if (!window.__cfRLUnblockHandlers) return false; toggleMenu()" data-cf-modified-81c0c91b339f60135225285c-="">&#9776;</button>
-					</div>
-					
-					<!-- Desktop Logo -->
-					
-
-					<!-- Menu Links -->
-					<div class="menu-links">
-						<a class="logo-link" href="index.html"><img class="logo-menu" alt="Amerika" src="https://www.l2amerika.com/images/amerika_logo_mini_3.png" /></a>
-						<a class="menu-link" href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
-						<a class="menu-link" href="https://www.l2amerika.com/?page=news&amp;id=1"><i class="fas fa-newspaper"></i><span>News</span></a>
-						<a class="menu-link" href="https://www.l2amerika.com/?page=info"><i class="fas fa-book"></i><span>Information</span></a>
-						<a class="menu-link" href="https://www.l2amerika.com/?page=download"><i class="fas fa-download"></i><span>Downloads</span></a>
-						<a class="menu-link" href="https://www.l2amerika.com/signup" target="_blank"><i class="fas fa-user-plus"></i><span>Register</span></a>
-						<a class="menu-link" href="https://www.l2amerika.com/?page=rankings"><i class="fas fa-trophy"></i><span>Rankings</span></a>
-					</div>
-					
-					<div class="menu-mobile" id="mobileMenu">
-						<div class="boxMenuPanelMobile flex relative z-1 mb-10 items-stretch">
-							<div class="flex flex-col gap-4 flex-1" id="ucpMenuLinks">
-								<a href="index.html" class="wiki__nav-item flex-sc" data-open-tab="general">
-									<div class="wiki__nav-item-icon flex-cc"><i class="ra ra-castle-emblem"></i></div>
-									<div class="wiki__nav-item-info">
-										<div class="wiki__nav-item-name">Home</div>
-									</div>
-								</a>
-								<a href="https://www.l2amerika.com/?page=news&amp;id=1" class="wiki__nav-item flex-sc" data-open-tab="general">
-									<div class="wiki__nav-item-icon flex-cc"><i class="ra ra-scroll-unfurled"></i></div>
-									<div class="wiki__nav-item-info">
-										<div class="wiki__nav-item-name">News</div>
-									</div>
-								</a>
-								<a href="https://www.l2amerika.com/?page=info" class="wiki__nav-item flex-sc" data-open-tab="rates">
-									<div class="wiki__nav-item-icon flex-cc"><i class="ra ra-book"></i></div>
-									<div class="wiki__nav-item-info">
-										<div class="wiki__nav-item-name">Information</div>
-									</div>
-								</a>
-								<a href="https://www.l2amerika.com/?page=download" class="wiki__nav-item flex-sc" data-open-tab="rates">
-									<div class="wiki__nav-item-icon flex-cc"><i class="ra ra-load"></i></div>
-									<div class="wiki__nav-item-info">
-										<div class="wiki__nav-item-name">Downloads</div>
-									</div>
-								</a>
-								<a href="https://www.l2amerika.com/?page=register" class="wiki__nav-item flex-sc" data-open-tab="enchant">
-									<div class="wiki__nav-item-icon flex-cc"><i class="ra ra-burning-book"></i></div>
-									<div class="wiki__nav-item-info">
-										<div class="wiki__nav-item-name">Register</div>
-									</div>
-								</a>
-								<a href="https://www.l2amerika.com/?page=rankings" class="wiki__nav-item flex-sc" data-open-tab="events">
-									<div class="wiki__nav-item-icon flex-cc"><i class="ra ra-bat-sword"></i></div>
-									<div class="wiki__nav-item-info">
-										<div class="wiki__nav-item-name">Rankings</div>
-									</div>
-								</a>
-								
-								</div>
-						</div>
-					</div>
-					<div class="server-install">
-						<div style="display: flex; justify-content: space-between;">
-						<div class="ucp-login">
-															<a class="button-login" href="https://www.l2amerika.com/signin" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Login ACC</a>
-								<!--<a class="button-login" href="?page=panel"><i class="fas fa-user"></i> Login</a>-->
-														</div>
-							<a class="button-install" href="https://www.l2amerika.com/Amerika_Installer.exe"><i class="fab fa-windows"></i> Install Amerika</a>
-						</div>
-					</div>
-				</div>
-			</nav>
-			<div class="Topbar">
-				<div class="topbar-container">
-					<div class="topbar-links">
-						<a class="sub-menu-link" target="_blank" href="https://discord.com/invite/vAWtEFt2hx">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-								<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path>
-							</svg>
-							<span>Community</span>
-						</a>
-						<a class="sub-menu-link" href="https://www.l2amerika.com/?page=bug_policy"><i class="fas fa-bug"></i><span>Bug Policy</span></a>
-						<a class="sub-menu-link" href="https://www.l2amerika.com/?page=info"><i class="fas fa-scroll"></i><span>Server Wiki</span></a>
-						<a class="sub-menu-link" href="https://www.l2amerika.com/?page=gallery"><i class="fas fa-images"></i><span>Media</span></a>
-						<a class="sub-menu-link" href="https://www.l2amerika.com/?page=boss-status"><i class="fas fa-skull"></i><span>Boss Status</span></a>
-						<a class="sub-menu-link" href="https://www.l2amerika.com/?page=castle-siege"><i class="fas fa-chess-rook"></i><span>Castle Siege</span></a>
-					</div>
-					<div class="server-stats">
-						<div style="display: flex; justify-content: space-between;">
-							<a href='https://www.l2amerika.com/?changelang=pt&amp;url=%2F' style="margin-right: 5px;">
-								<img src="https://www.l2amerika.com/images/lang/pt.png" alt="Portuguese" style="width: 100%;">
-							</a>
-							<a href='https://www.l2amerika.com/?changelang=en&amp;url=%2F' style="margin-right: 5px;">
-								<img src="https://www.l2amerika.com/images/lang/en.png" alt="English" style="width: 100%;">
-							</a>
-							<a href='https://www.l2amerika.com/?changelang=es&amp;url=%2F' style="margin-right: 5px;">
-								<img src="https://www.l2amerika.com/images/lang/es.png" alt="Spanish" style="width: 100%;">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<section>
-				
-				<article>
-					
-					<div class='page'>
-						
-
-			<section class="bg-cover h-screen bg-bottom flex" style="position: relative; max-height: 600px; transition: opacity 0.5s; opacity: 1;">
-<video autoplay loop muted playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center 25%;">
-	<source src="https://www.l2amerika.com/media/cinematicl2.mp4" type="video/mp4">
-	<!--<source src="media/christmas_video.mp4" type="video/mp4">-->
-</video>
-<div class="hero-overlay"></div>
-
-				<div class="container mx-auto flex flex-1 py-8 mt-12 max-sm:px-4 max-sm:flex-col px-10;">
-					<div class="pattern"></div>
-					<div class="flex flex-col max-sm:p-4 max-sm:w-full flex-1" style="margin-left: 45px;">
-						<div class="top-relative">
-							<div class="decorativeText text-9xl max-sm:text-7xl font-black text-outline absolute z-1 -top-8">AMERIKA</div>
-							<h1 class="decorativeText2 text-5xl max-sm:text-4xl font-black color-highlight relative z-0 text-shadow">HIGH FIVE SERVER!</h1>
-						</div>
-						<p class="text-base">
-							<br>
-							The true essence of L2 PvP: 17 years online, no wipes, automatic events, sieges and Territory Wars. Hunt colossal bosses, secure special drops and become the legend you've always wanted to be.
-						</p>
-						<div class="hero-badges">
-							<span class="hero-badge"><i class="fas fa-shield-alt"></i>17 Years Online</span>
-							<span class="hero-badge"><i class="fas fa-ban"></i>No Wipes</span>
-							<span class="hero-badge"><span class="dot"></span>1813 Players Now</span>
-						</div>
-						<div class="header__info-buttons-register flex-cc">
-							<a href="https://www.l2amerika.com/signup" target="_blank" rel="noopener noreferrer" class="header__info-newbtn button-new flex-cc"><span>REGISTER</span></a>
-							<a href="https://www.l2amerika.com/Amerika_Installer.exe" class="button-secondary"><i class="fab fa-windows"></i><span>Download Client</span></a>
-						</div>
-					</div>
-						<div class="hero-right" style="margin-right: 50px;">
-															<div class="server-orb server-orb-main">
-																			<div class="server-orb-ring"></div>
-										<div class="server-orb-ring ring-dashed"></div>
-															
-									<div class="server-card glass-panel">
-										<h4 class="text-primary-rate">
-											200x										</h4>
-										<p>High Five</p>
-						
-																					<div class="server-status online"><span class="status-dot"></span>Online: 1813</div>
-																			</div>
-								</div>
-																<div class="server-orb server-orb-beta">
-																			<div class="server-orb-static"></div>
-										<div class="server-orb-static inner"></div>
-															
-									<div class="server-card glass-panel">
-										<h4 class="text-light-title">
-											BETA										</h4>
-										<p>High Five</p>
-						
-																					<div class="server-status offline"><span class="status-dot"></span>Offline</div>
-																			</div>
-								</div>
-														</div>
-						<!--<div class="servers flex-cc" style="margin-right: 50px;">
-																<div class="servers__item flex-cc">
-										<div class="servers__item-progress-bg" data-id-progress="1" data-online="0"></div>
-										<div class="servers__item-info">
-											<div class="servers__item-info-rate">200x</div>
-											<div class="servers__item-info-name">High Five</div>
-											<div class="servers__item-info-status on">ONLINE 0</div>
-										</div>
-									</div>
-																<div class="servers__item flex-cc">
-										<div class="servers__item-progress-bg" data-id-progress="2" data-online="0"></div>
-										<div class="servers__item-info">
-											<div class="servers__item-info-rate">Beta</div>
-											<div class="servers__item-info-name">High Five</div>
-											<div class="servers__item-info-status off">OFFLINE</div>
-										</div>
-									</div>
-													</div>-->
-                </div>
-            </section>
-
-			<!-- Stats strip -->
-			<div class="stats-strip reveal">
-				<div class="stats-strip-inner">
-					<div class="stats-strip-item">
-						<div class="stats-strip-number">17</div>
-						<div class="stats-strip-label">Years Online</div>
-					</div>
-					<div class="stats-strip-item">
-						<div class="stats-strip-number">1,813</div>
-						<div class="stats-strip-label">Players Now</div>
-					</div>
-					<div class="stats-strip-item">
-						<div class="stats-strip-number">200x</div>
-						<div class="stats-strip-label">XP Rate</div>
-					</div>
-					<div class="stats-strip-item">
-						<div class="stats-strip-number">0</div>
-						<div class="stats-strip-label">Wipes Ever</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Swiper CSS e JS -->
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@5.2.1/css/swiper.min.css">
-			<script src="https://cdn.jsdelivr.net/npm/swiper@5.2.1/js/swiper.min.js" type="81c0c91b339f60135225285c-text/javascript"></script>
-			
-			<div class="top_separator"></div>
-			<div class="topContent relative reveal">
-				<div class="container mx-auto p-10 max-sm:p-5">
-					<div class="flex relative z-1 mb-10 items-stretch w-full flex-col">
-						<div class="title-container mb-6">
-							<div class="title text-center uppercase" style="opacity: 1; transform: none;">Community Videos</div>
-							<div class="text-white text-center max-w-3xl mx-auto mt-6 text-lg p-3">Watch the best moments of Amerika created by our players!</div>
-						</div>
-						
-						<!-- Swiper + Setas FORA -->
-						<div class="swiper-wrapper-container">
-							<div class="swiper-container mySwiper">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7639882113285770503' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7639882113285770503.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7639882060282236167' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7639882060282236167.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7639881668404333831' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7639881668404333831.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7639547973734550792' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7639547973734550792.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoModal' data-src='https://www.youtube.com/embed/ES2cd-85zC0' data-type='video'>
-														<img src='https://img.youtube.com/vi/ES2cd-85zC0/0.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoModal' data-src='https://www.youtube.com/embed/l1Z1rqK0O2Y' data-type='video'>
-														<img src='https://img.youtube.com/vi/l1Z1rqK0O2Y/0.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7639147791960362248' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7639147791960362248.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7638799813856922898' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7638799813856922898.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7638799244584930578' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7638799244584930578.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoModal' data-src='https://www.youtube.com/embed/2KSScxPkcRw' data-type='video'>
-														<img src='https://img.youtube.com/vi/2KSScxPkcRw/0.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoModal' data-src='https://www.youtube.com/embed/pBvQcApoXoU' data-type='video'>
-														<img src='https://img.youtube.com/vi/pBvQcApoXoU/0.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoModal' data-src='https://www.youtube.com/embed/R8ggBUS4t94' data-type='video'>
-														<img src='https://img.youtube.com/vi/R8ggBUS4t94/0.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7638021227294018834' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7638021227294018834.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7638020602774768903' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7638020602774768903.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoModal' data-src='https://www.youtube.com/embed/C9iR-ZfX9qI' data-type='video'>
-														<img src='https://img.youtube.com/vi/C9iR-ZfX9qI/0.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7637332430826867976' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7637332430826867976.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7637332367446658322' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7637332367446658322.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7637332263549652231' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7637332263549652231.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoModal' data-src='https://www.youtube.com/embed/E1byHP0FgQo' data-type='video'>
-														<img src='https://img.youtube.com/vi/E1byHP0FgQo/0.jpg' class='carousel-thumb' />
-													</a></div><div class="swiper-slide"><a href='index.html#' data-toggle='modal' data-target='#videoTikTokModal' data-src='https://www.tiktok.com/embed/v2/7636909331086183698' data-type='video'>
-														<img src='https://www.l2amerika.com/imgs/gallery/thumbnail/7636909331086183698.jpg' class='carousel-thumb' />
-													</a></div>								</div>
-							</div>
-			
-							<!-- Setas FORA do swiper-container -->
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-button-next"></div>
-						</div>
-			
-						<div class="text-center mt-6">
-							<a href="https://www.l2amerika.com/?page=gallery&amp;t=video" class="button-new">Ver todos os vídeos</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Modais -->
-			<div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-lg" role="document">
-				<div class="modal-content">
-				<div class="modal-body"></div>
-				</div>
-			</div>
-			</div>
-			
-			<div class="modal fade" id="videoTikTokModal" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-lg" role="document">
-				<div class="modal-content">
-				<div class="modal-body"></div>
-				</div>
-			</div>
-			</div>
-			
-			<!-- Swiper Config -->
-			<script type="81c0c91b339f60135225285c-text/javascript">
-			var swiper = new Swiper('.mySwiper', {
-				loop: true,
-				autoplay: {
-					delay: 3500,
-					disableOnInteraction: false,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				spaceBetween: 20,
-				breakpoints: {
-					0:    { slidesPerView: 1 },
-					640:  { slidesPerView: 1 },
-					768:  { slidesPerView: 2 },
-					1024: { slidesPerView: 3 },
-					1280: { slidesPerView: 4 }
-				}
-			});
-			</script>
-			
-			<!-- Modal script -->
-			<script type="81c0c91b339f60135225285c-text/javascript">
-			$(document).ready(function(){
-				$('#videoModal').on('show.bs.modal', function (event) {
-					var button = $(event.relatedTarget);
-					var src = button.data('src');
-					$(this).find('.modal-body').html('<iframe width="100%" height="450" src="https://www.l2amerika.com/'&#32;+&#32;src&#32;+&#32;'" frameborder="0" allowfullscreen></iframe>');
-				});
-				$('#videoModal').on('hide.bs.modal', function () {
-					$(this).find('.modal-body').html('');
-				});
-				$('#videoTikTokModal').on('show.bs.modal', function (event) {
-					var button = $(event.relatedTarget);
-					var src = button.data('src');
-					$(this).find('.modal-body').html('<iframe width="100%" height="750" src="https://www.l2amerika.com/'&#32;+&#32;src&#32;+&#32;'" frameborder="0" allowfullscreen></iframe>');
-				});
-				$('#videoTikTokModal').on('hide.bs.modal', function () {
-					$(this).find('.modal-body').html('');
-				});
-			});
-			</script>
-			
-			<!-- CSS -->
-			<style>
-.hero-right
-{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 48px;
-	flex-wrap: wrap;
-}
-
-.server-orb
-{
-	position: relative;
-	width: 192px;
-	height: 192px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex: 0 0 auto;
-}
-
-.server-orb-ring
-{
-	position: absolute;
-	inset: 0;
-	border-radius: 50%;
-	border: 1px solid rgba(212, 175, 55, 0.20);
-	animation: spin-slow 10s linear infinite;
-}
-
-.server-orb-ring.ring-dashed
-{
-	inset: 8px;
-	border-style: dashed;
-	border-color: rgba(212, 175, 55, 0.30);
-	animation: spin-slow-reverse 15s linear infinite;
-}
-
-.server-orb-static
-{
-	position: absolute;
-	inset: 0;
-	border-radius: 50%;
-	border: 1px solid rgba(255, 255, 255, 0.10);
-}
-
-.server-orb-static.inner
-{
-	inset: 16px;
-	border-color: rgba(255, 255, 255, 0.05);
-}
-
-.server-card
-{
-	width: 144px;
-	height: 144px;
-	border-radius: 50%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 16px;
-	text-align: center;
-	background: rgba(0, 0, 0, 0.40);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	border: 1px solid rgba(212, 175, 55, 0.10);
-}
-
-.server-card h4
-{
-	font-family: "Cinzel", serif;
-	font-size: 24px;
-	font-weight: 700;
-	line-height: 1;
-	margin-bottom: 4px;
-}
-
-.server-card p
-{
-	font-size: 10px;
-	text-transform: uppercase;
-	letter-spacing: 0.18em;
-	opacity: 0.60;
-	margin-bottom: 8px;
-	color: #ffffff;
-}
-
-.text-primary-rate
-{
-	color: #f2ca50 !important;
-}
-
-.text-light-title
-{
-	color: rgba(255, 255, 255, 0.72);
-}
-
-.server-status
-{
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 4px 12px;
-	border-radius: 999px;
-	font-size: 10px;
-	text-transform: uppercase;
-	letter-spacing: 0.10em;
-	border: 1px solid transparent;
-	white-space: nowrap;
-}
-
-.server-status.online
-{
-	background: rgba(74, 222, 128, 0.20);
-	color: #4ade80;
-	border-color: rgba(74, 222, 128, 0.30);
-}
-
-.server-status.offline
-{
-	background: rgba(248, 113, 113, 0.20);
-	color: #f87171;
-	border-color: rgba(248, 113, 113, 0.30);
-}
-
-@keyframes spin-slow
-{
-	from
-	{
-		transform: rotate(0deg);
-	}
-	to
-	{
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes spin-slow-reverse
-{
-	from
-	{
-		transform: rotate(360deg);
-	}
-	to
-	{
-		transform: rotate(0deg);
-	}
-}
-
-@media (max-width: 834px)
-{
-	.top-relative
-	{
-		width: 350px;
+	<style>
+	/* ==========================================================
+	   Design tokens (portados do v2/app/globals.css)
+	   ========================================================== */
+	:root {
+		--bg:               oklch(0.10 0.005 280);
+		--bg-card:          oklch(0.14 0.005 280);
+		--bg-secondary:     oklch(0.18 0.005 280);
+		--border:           oklch(0.22 0.01 280);
+		--fg:               oklch(0.95 0.01 90);
+		--fg-muted:         oklch(0.60 0.02 90);
+		--gold:             oklch(0.78 0.14 85);
+		--gold-light:       oklch(0.85 0.14 85);
+		--gold-dark:        oklch(0.60 0.14 85);
+		--gold-fg:          oklch(0.12 0.005 280);
+		--emerald:          oklch(0.70 0.18 155);
+		--red:              oklch(0.65 0.22 25);
+		--discord:          #5865F2;
+
+		--surface-glass:        rgba(20, 18, 30, 0.6);
+		--surface-glass-strong: rgba(12, 10, 22, 0.8);
+		--glow-gold:        0 0 30px oklch(0.78 0.14 85 / 0.3);
+		--glow-gold-strong: 0 0 40px oklch(0.78 0.14 85 / 0.5);
+
+		--radius-sm: 6px;
+		--radius:    10px;
+		--radius-lg: 14px;
+		--radius-xl: 18px;
+
+		--font-sans:   'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+		--font-cinzel: 'Cinzel', serif;
+
+		--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+		--t-fast: 180ms;
+		--t-base: 280ms;
+		--t-slow: 600ms;
+
+		--max-w: 1280px;
 	}
 
-	.decorativeText
-	{
-		top: 5px;
-		text-align: center;
-		font-size: 40px;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-		padding-right: 30px;
+	/* Reset minimalista */
+	*, *::before, *::after { box-sizing: border-box; }
+	* { margin: 0; padding: 0; }
+	html { scroll-behavior: smooth; }
+	body {
+		font-family: var(--font-sans);
+		color: var(--fg);
+		background: var(--bg);
+		min-height: 100vh;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+	a { color: inherit; text-decoration: none; }
+	img, svg, video { display: block; max-width: 100%; }
+	button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; }
+	ul { list-style: none; }
+
+	a:focus-visible, button:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
+		border-radius: var(--radius-sm);
 	}
 
-	.decorativeText2
-	{
-		margin-top: 2px;
-		text-align: center;
-		font-size: 20px;
-		padding-right: 55px;
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
 	}
 
-	p.text-base
-	{
-		margin-top: -15px;
-		text-align: justify;
-		max-width: var(--max-width-values);
+	/* ==========================================================
+	   Animações
+	   ========================================================== */
+	@keyframes pulse-glow {
+		0%, 100% { box-shadow: 0 0 0 0 oklch(0.78 0.14 85 / 0.4); }
+		50%      { box-shadow: 0 0 22px 5px oklch(0.78 0.14 85 / 0.55); }
+	}
+	@keyframes spin-slow         { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+	@keyframes spin-slow-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+	@keyframes shimmer {
+		0%   { background-position: -200% center; }
+		100% { background-position: 200% center; }
+	}
+	@keyframes pulse-dot {
+		0%, 100% { transform: scale(1);   opacity: 1;   }
+		50%      { transform: scale(1.5); opacity: 0.5; }
+	}
+	@keyframes fade-up {
+		from { opacity: 0; transform: translateY(24px); }
+		to   { opacity: 1; transform: translateY(0); }
 	}
 
-	.text-base
-	{
-		text-align: justify;
-		font-size: 14px;
-		max-width: 100%;
-		padding-right: 55px;
+	/* Scroll reveal */
+	.reveal { opacity: 0; transform: translateY(28px); transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out); }
+	.reveal.in { opacity: 1; transform: translateY(0); }
+	.reveal[data-delay="1"].in { transition-delay: 100ms; }
+	.reveal[data-delay="2"].in { transition-delay: 200ms; }
+	.reveal[data-delay="3"].in { transition-delay: 300ms; }
+	.reveal[data-delay="4"].in { transition-delay: 400ms; }
+	.reveal[data-delay="5"].in { transition-delay: 500ms; }
+
+	/* ==========================================================
+	   Layout helpers
+	   ========================================================== */
+	.container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 16px; }
+	@media (min-width: 640px) { .container { padding: 0 24px; } }
+	@media (min-width: 1024px) { .container { padding: 0 32px; } }
+
+	.eyebrow {
+		display: inline-block;
+		padding: 5px 12px;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: var(--gold);
+		background: oklch(0.78 0.14 85 / 0.05);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		border-radius: 999px;
 	}
 
-	.header__info-buttons-register
-	{
-		display: none;
+	.section-title {
+		font-family: var(--font-cinzel);
+		font-size: clamp(28px, 4vw, 40px);
+		font-weight: 700;
+		color: var(--fg);
+		margin: 16px 0 16px;
+		text-wrap: balance;
+	}
+	.section-sub {
+		max-width: 640px;
+		margin: 0 auto;
+		color: var(--fg-muted);
+		font-size: 16px;
+		line-height: 1.7;
+		text-wrap: pretty;
 	}
 
-	.hero-right
-	{
-		order: -1;
-		width: auto;
-		margin: -10px auto 45px auto !important;
-		padding-left: 0;
-		padding-right: 0;
-		display: flex;
-		flex-direction: row;
+	.section-head { text-align: center; margin-bottom: 64px; }
+
+	/* ==========================================================
+	   Botões
+	   ========================================================== */
+	.btn {
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		gap: 24px;
-		flex-wrap: nowrap;
-	}
-
-	.server-orb
-	{
-		width: 150px;
-		height: 150px;
-		margin: 0;
-	}
-
-	.server-card
-	{
-		width: 118px;
-		height: 118px;
-		padding: 10px;
-	}
-
-	.server-card h4
-	{
-		font-size: 20px;
-	}
-
-	.server-card p
-	{
-		font-size: 8px;
-		margin-bottom: 6px;
-		letter-spacing: 0.12em;
-	}
-
-	.server-status
-	{
-		font-size: 8px;
-		padding: 3px 8px;
-	}
-}
-
-@media (max-width: 480px)
-{
-	.hero-right
-	{
-		order: -1;
-		width: 100%;
-		margin: -40px auto 45px auto !important;
 		gap: 8px;
-		flex-wrap: nowrap;
+		padding: 14px 28px;
+		font-family: var(--font-sans);
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		border-radius: var(--radius);
+		transition: all var(--t-base) var(--ease-out);
+		white-space: nowrap;
+	}
+	.btn-primary {
+		color: var(--gold-fg);
+		background: var(--gold);
+		box-shadow: var(--glow-gold);
+	}
+	.btn-primary:hover {
+		filter: brightness(1.1);
+		box-shadow: var(--glow-gold-strong);
+		transform: translateY(-1px);
+	}
+	.btn-outline {
+		color: var(--fg);
+		background: transparent;
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+	}
+	.btn-outline:hover {
+		background: oklch(0.78 0.14 85 / 0.1);
+		border-color: oklch(0.78 0.14 85 / 0.5);
+	}
+	.btn-discord {
+		color: var(--fg);
+		background: var(--discord);
+		box-shadow: 0 0 30px rgba(88, 101, 242, 0.3);
+	}
+	.btn-discord:hover { background: #4752C4; }
+
+	.btn-sm { padding: 10px 18px; font-size: 11px; }
+
+	/* ==========================================================
+	   NAVBAR
+	   ========================================================== */
+	.navbar {
+		position: fixed;
+		top: 0; left: 0; right: 0;
+		z-index: 50;
+		background: transparent;
+		transition: background var(--t-base) var(--ease-out),
+		            backdrop-filter var(--t-base) var(--ease-out),
+		            border-color var(--t-base) var(--ease-out),
+		            box-shadow var(--t-base) var(--ease-out);
+		border-bottom: 1px solid transparent;
+	}
+	.navbar.scrolled {
+		background: oklch(0.1 0.005 280 / 0.8);
+		backdrop-filter: blur(20px) saturate(140%);
+		-webkit-backdrop-filter: blur(20px) saturate(140%);
+		border-bottom-color: oklch(0.78 0.14 85 / 0.2);
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+	}
+	.nav-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 64px;
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 0 16px;
+	}
+	@media (min-width: 640px) { .nav-inner { padding: 0 24px; } }
+	@media (min-width: 1024px) { .nav-inner { padding: 0 32px; } }
+
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-shrink: 0;
+	}
+	.brand-mark {
+		width: 40px; height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: var(--font-cinzel);
+		font-weight: 700;
+		font-size: 18px;
+		color: var(--gold);
+		background: oklch(0.78 0.14 85 / 0.1);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		border-radius: var(--radius);
+	}
+	.brand-text {
+		font-family: var(--font-cinzel);
+		font-weight: 700;
+		font-size: 20px;
+		letter-spacing: 0.1em;
+		color: var(--fg);
+	}
+	@media (max-width: 639px) { .brand-text { display: none; } }
+
+	.nav-links {
+		display: none;
+		align-items: center;
+		gap: 4px;
+	}
+	@media (min-width: 1024px) { .nav-links { display: flex; } }
+
+	.nav-link {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 8px 12px;
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--fg-muted);
+		transition: color var(--t-fast) var(--ease-out);
+	}
+	.nav-link:hover { color: var(--fg); }
+	.nav-link::after {
+		content: "";
+		position: absolute;
+		left: 12px; right: 12px; bottom: 4px;
+		height: 1px;
+		background: var(--gold);
+		transform: scaleX(0);
+		transition: transform var(--t-base) var(--ease-out);
+	}
+	.nav-link:hover::after { transform: scaleX(1); }
+
+	.nav-cta {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+	.nav-cta .btn-install {
+		display: none;
+		animation: pulse-glow 3s ease-in-out infinite;
+	}
+	@media (min-width: 640px) { .nav-cta .btn-login, .nav-cta .btn-install { display: inline-flex; } }
+	@media (max-width: 639px) { .nav-cta .btn-login { display: none; } }
+
+	.hamburger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px; height: 40px;
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--border);
+		color: var(--fg);
+	}
+	@media (min-width: 1024px) { .hamburger { display: none; } }
+
+	.mobile-menu {
+		display: none;
+		border-top: 1px solid var(--border);
+		background: oklch(0.1 0.005 280 / 0.95);
+		backdrop-filter: blur(20px) saturate(140%);
+		-webkit-backdrop-filter: blur(20px) saturate(140%);
+	}
+	.mobile-menu.open { display: block; }
+	.mobile-menu-inner {
+		padding: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+	.mobile-menu .nav-link {
+		padding: 12px;
+		font-size: 13px;
+		letter-spacing: 0.1em;
+		color: var(--fg-muted);
+		border-radius: var(--radius);
+	}
+	.mobile-menu .nav-link i { color: var(--gold); width: 18px; text-align: center; }
+	.mobile-menu .nav-link:hover { background: var(--bg-secondary); color: var(--fg); }
+	.mobile-menu .nav-link::after { display: none; }
+	.mobile-cta {
+		display: flex;
+		gap: 8px;
+		margin-top: 12px;
+		padding-top: 12px;
+		border-top: 1px solid var(--border);
+	}
+	.mobile-cta .btn { flex: 1; }
+
+	/* ==========================================================
+	   HERO
+	   ========================================================== */
+	.hero {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		padding-top: 64px;
+	}
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+	.hero-bg video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 25%;
+	}
+	.hero-overlay-top {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, oklch(0.1 0.005 280 / 0.2) 0%, oklch(0.1 0.005 280 / 0.6) 50%, var(--bg) 100%);
+		z-index: 1;
+	}
+	.hero-overlay-side {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, oklch(0.1 0.005 280 / 0.8) 0%, transparent 60%);
+		z-index: 1;
+	}
+	.hero-bottom-fade {
+		position: absolute;
+		bottom: 0; left: 0; right: 0;
+		height: 128px;
+		background: linear-gradient(180deg, transparent, var(--bg));
+		z-index: 2;
+	}
+	.hero-content {
+		position: relative;
+		z-index: 5;
+		width: 100%;
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 96px 16px;
+	}
+	@media (min-width: 640px) { .hero-content { padding: 96px 24px; } }
+	@media (min-width: 1024px) { .hero-content { padding: 128px 32px; } }
+
+	.hero-grid {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 48px;
+		text-align: center;
+	}
+	@media (min-width: 1024px) {
+		.hero-grid { flex-direction: row; gap: 64px; text-align: left; }
+	}
+	.hero-text { flex: 1; display: flex; flex-direction: column; align-items: center; }
+	@media (min-width: 1024px) { .hero-text { align-items: flex-start; } }
+
+	.hero-eyebrow { animation: fade-up 0.6s var(--ease-out) both; }
+	.hero-title {
+		margin-top: 18px;
+		font-family: var(--font-cinzel);
+		font-size: clamp(48px, 8vw, 80px);
+		font-weight: 900;
+		line-height: 0.95;
+		letter-spacing: 0.02em;
+		background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+		background-size: 200% 100%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: fade-up 0.7s var(--ease-out) 0.1s both, shimmer 4s linear infinite;
+	}
+	.hero-subtitle {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-top: 8px;
+		font-size: clamp(18px, 2.5vw, 24px);
+		font-weight: 700;
+		color: oklch(0.95 0.01 90 / 0.9);
+		animation: fade-up 0.7s var(--ease-out) 0.2s both;
+	}
+	.hero-subtitle::before {
+		content: "";
+		display: inline-block;
+		width: 48px; height: 2px;
+		background: linear-gradient(90deg, var(--gold), transparent);
+	}
+	.hero-desc {
+		margin-top: 24px;
+		max-width: 540px;
+		color: var(--fg-muted);
+		font-size: 16px;
+		line-height: 1.7;
+		text-wrap: pretty;
+		animation: fade-up 0.7s var(--ease-out) 0.3s both;
+	}
+	.hero-badges {
+		margin-top: 32px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		justify-content: center;
+		animation: fade-up 0.7s var(--ease-out) 0.4s both;
+	}
+	@media (min-width: 1024px) { .hero-badges { justify-content: flex-start; } }
+	.hero-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 7px 14px;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: oklch(0.95 0.01 90 / 0.9);
+		background: var(--surface-glass);
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		border-radius: 999px;
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+	.hero-badge i { color: var(--gold); font-size: 12px; }
+	.hero-cta {
+		margin-top: 32px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		justify-content: center;
+		animation: fade-up 0.7s var(--ease-out) 0.5s both;
+	}
+	@media (min-width: 1024px) { .hero-cta { justify-content: flex-start; } }
+
+	/* Server orbs */
+	.hero-orbs {
+		display: flex;
+		gap: 32px;
+		flex-wrap: wrap;
 		justify-content: center;
 	}
+	.orb {
+		position: relative;
+		width: 180px; height: 180px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		animation: fade-up 0.7s var(--ease-out) 0.4s both;
+	}
+	.orb-ring {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		animation: spin-slow 12s linear infinite;
+	}
+	.orb-ring.dashed {
+		inset: 8px;
+		border-style: dashed;
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		animation: spin-slow-reverse 18s linear infinite;
+	}
+	.orb-static {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		border: 1px solid oklch(0.95 0.01 90 / 0.1);
+	}
+	.orb-static.inner {
+		inset: 16px;
+		border-color: oklch(0.95 0.01 90 / 0.05);
+	}
+	.orb-card {
+		position: relative;
+		width: 128px; height: 128px;
+		border-radius: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 16px;
+		text-align: center;
+		backdrop-filter: blur(20px) saturate(140%);
+		-webkit-backdrop-filter: blur(20px) saturate(140%);
+		overflow: hidden;
+	}
+	.orb-main .orb-card {
+		background: var(--surface-glass-strong);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+	}
+	.orb-main .orb-card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle at 50% 0%, oklch(0.78 0.14 85 / 0.15), transparent 60%);
+		pointer-events: none;
+	}
+	.orb-secondary .orb-card {
+		background: var(--surface-glass);
+		border: 1px solid var(--border);
+		opacity: 0.75;
+	}
+	.orb-rate {
+		font-family: var(--font-cinzel);
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 4px;
+		position: relative;
+		z-index: 1;
+	}
+	.orb-main .orb-rate {
+		background: linear-gradient(180deg, var(--gold-light), var(--gold-dark));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.orb-secondary .orb-rate { color: oklch(0.95 0.01 90 / 0.7); }
+	.orb-sub {
+		font-size: 9px;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: oklch(0.95 0.01 90 / 0.6);
+		margin-bottom: 8px;
+		position: relative;
+		z-index: 1;
+	}
+	.orb-status {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 4px 10px;
+		font-size: 9px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		border-radius: 999px;
+		border: 1px solid transparent;
+		position: relative;
+		z-index: 1;
+	}
+	.orb-status.online {
+		color: oklch(0.7 0.18 155);
+		background: oklch(0.7 0.18 155 / 0.2);
+		border-color: oklch(0.7 0.18 155 / 0.3);
+	}
+	.orb-status.offline {
+		color: oklch(0.65 0.22 25);
+		background: oklch(0.65 0.22 25 / 0.2);
+		border-color: oklch(0.65 0.22 25 / 0.3);
+	}
+	.dot {
+		width: 6px; height: 6px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.dot.online {
+		background: oklch(0.7 0.18 155);
+		box-shadow: 0 0 8px oklch(0.7 0.18 155 / 0.6);
+		animation: pulse-dot 2s ease-in-out infinite;
+	}
+	.dot.offline { background: oklch(0.65 0.22 25); }
 
-	.hero-right .server-orb
-	{
-		display: flex !important;
+	/* ==========================================================
+	   FEATURES
+	   ========================================================== */
+	.section {
+		position: relative;
+		padding: 96px 0;
+		overflow: hidden;
+	}
+	.section-bg-top    { background: radial-gradient(ellipse at top,    oklch(0.78 0.14 85 / 0.04), transparent 60%); position: absolute; inset: 0; pointer-events: none; }
+	.section-bg-center { background: radial-gradient(ellipse at center, oklch(0.78 0.14 85 / 0.03), transparent 70%); position: absolute; inset: 0; pointer-events: none; }
+	.section-bg-bottom { background: radial-gradient(ellipse at bottom, oklch(0.78 0.14 85 / 0.03), transparent 60%); position: absolute; inset: 0; pointer-events: none; }
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	@media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+
+	.feature {
+		position: relative;
+		padding: 24px;
+		border-radius: var(--radius-lg);
+		background: oklch(0.14 0.005 280 / 0.5);
+		border: 1px solid var(--border);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		transition: all var(--t-base) var(--ease-out);
+		overflow: hidden;
+	}
+	.feature::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: var(--radius-lg);
+		background: radial-gradient(circle at 50% 0%, oklch(0.78 0.14 85 / 0.06), transparent 50%);
+		opacity: 0;
+		transition: opacity var(--t-base) var(--ease-out);
+		pointer-events: none;
+	}
+	.feature:hover {
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		box-shadow: var(--glow-gold);
+	}
+	.feature:hover::before { opacity: 1; }
+	.feature-icon {
+		position: relative;
+		width: 40px; height: 40px;
+		border-radius: var(--radius-sm);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: oklch(0.78 0.14 85 / 0.1);
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		color: var(--gold);
+		font-size: 18px;
+		margin-bottom: 16px;
+		transition: background var(--t-base) var(--ease-out);
+	}
+	.feature:hover .feature-icon { background: oklch(0.78 0.14 85 / 0.2); }
+	.feature h3 {
+		position: relative;
+		font-family: var(--font-sans);
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--fg);
+		margin-bottom: 8px;
+	}
+	.feature p {
+		position: relative;
+		font-size: 14px;
+		color: var(--fg-muted);
+		line-height: 1.7;
 	}
 
-	.server-orb
-	{
-		width: 118px;
-		height: 118px;
-	}
+	.features-cta { text-align: center; margin-top: 48px; }
 
-	.server-card
-	{
-		width: 94px;
-		height: 94px;
-		padding: 6px;
+	/* ==========================================================
+	   COMMUNITY (videos)
+	   ========================================================== */
+	.videos-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
 	}
+	@media (min-width: 640px)  { .videos-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .videos-grid { grid-template-columns: repeat(3, 1fr); } }
+	@media (min-width: 1280px) { .videos-grid { grid-template-columns: repeat(4, 1fr); } }
 
-	.server-card h4
-	{
+	.video-card {
+		position: relative;
+		display: block;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid var(--border);
+		transition: all var(--t-base) var(--ease-out);
+		aspect-ratio: 16/9;
+		background: var(--bg-secondary);
+	}
+	.video-card:hover {
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		box-shadow: var(--glow-gold);
+	}
+	.video-card img {
+		width: 100%; height: 100%;
+		object-fit: cover;
+		transition: transform 500ms var(--ease-out);
+	}
+	.video-card:hover img { transform: scale(1.05); }
+	.video-card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
+		opacity: 0;
+		transition: opacity var(--t-base) var(--ease-out);
+		z-index: 1;
+	}
+	.video-card:hover::before { opacity: 1; }
+	.video-play {
+		position: absolute;
+		top: 50%; left: 50%;
+		width: 56px; height: 56px;
+		margin: -28px 0 0 -28px;
+		border-radius: 50%;
+		background: var(--gold);
+		color: var(--gold-fg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 20px;
+		padding-left: 4px;
+		transform: scale(0);
+		transition: transform var(--t-base) var(--ease-out);
+		box-shadow: var(--glow-gold-strong);
+		z-index: 2;
+	}
+	.video-card:hover .video-play { transform: scale(1); }
+	.video-ext {
+		position: absolute;
+		top: 10px; right: 10px;
+		color: oklch(0.95 0.01 90 / 0.8);
+		font-size: 14px;
+		opacity: 0;
+		transition: opacity var(--t-base) var(--ease-out);
+		z-index: 2;
+	}
+	.video-card:hover .video-ext { opacity: 1; }
+
+	.videos-cta { text-align: center; margin-top: 40px; }
+
+	/* ==========================================================
+	   CONTENT CREATOR
+	   ========================================================== */
+	.creator { background: oklch(0.18 0.005 280 / 0.5); }
+	.creator-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 48px;
+		align-items: center;
+	}
+	@media (min-width: 1024px) {
+		.creator-grid { flex-direction: row; gap: 64px; }
+	}
+	.creator-text { flex: 1; }
+	.creator-text h2 { text-align: left; }
+	.creator-text p {
+		color: var(--fg-muted);
+		line-height: 1.7;
+		margin-bottom: 16px;
+		text-wrap: pretty;
+	}
+	.creator-stats {
+		display: flex;
+		gap: 24px;
+		margin: 32px 0;
+	}
+	.creator-stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
+	}
+	.creator-stat-icon {
+		width: 40px; height: 40px;
+		border-radius: var(--radius-sm);
+		background: oklch(0.78 0.14 85 / 0.1);
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		color: var(--gold);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		font-size: 16px;
 	}
+	.creator-stat-value {
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--fg);
+	}
+	.creator-stat-label {
+		font-size: 10px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--fg-muted);
+	}
+	.creator-visual {
+		flex: 1;
+		position: relative;
+		aspect-ratio: 16/9;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		box-shadow: var(--glow-gold);
+		width: 100%;
+	}
+	.creator-visual video,
+	.creator-visual img {
+		width: 100%; height: 100%;
+		object-fit: cover;
+	}
+	.creator-visual::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, transparent 50%, oklch(0.1 0.005 280 / 0.8));
+	}
+	.creator-visual-cap {
+		position: absolute;
+		bottom: 16px; left: 16px; right: 16px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		z-index: 1;
+	}
+	.creator-visual-cap-icon {
+		width: 32px; height: 32px;
+		border-radius: 50%;
+		background: oklch(0.78 0.14 85 / 0.2);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		color: var(--gold);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+	}
+	.creator-visual-cap p:first-child { font-size: 13px; font-weight: 600; color: var(--fg); }
+	.creator-visual-cap p:last-child { font-size: 10px; color: var(--fg-muted); }
 
-	.server-card p
-	{
-		font-size: 6px;
-		letter-spacing: 0.08em;
+	/* ==========================================================
+	   WIKI cards
+	   ========================================================== */
+	.wiki-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	@media (min-width: 640px)  { .wiki-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .wiki-grid { grid-template-columns: repeat(4, 1fr); } }
+
+	.wiki-card {
+		position: relative;
+		display: block;
+		aspect-ratio: 3/4;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid var(--border);
+		transition: all var(--t-base) var(--ease-out);
+	}
+	.wiki-card:hover {
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		box-shadow: var(--glow-gold);
+		transform: translateY(-4px);
+	}
+	.wiki-card img {
+		width: 100%; height: 100%;
+		object-fit: cover;
+		transition: transform 700ms var(--ease-out);
+	}
+	.wiki-card:hover img { transform: scale(1.05); }
+	.wiki-card::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, transparent 30%, oklch(0.1 0.005 280 / 0.6) 60%, var(--bg) 100%);
+	}
+	.wiki-info {
+		position: absolute;
+		left: 20px; right: 20px; bottom: 20px;
+		z-index: 1;
+	}
+	.wiki-info-icon {
+		width: 36px; height: 36px;
+		border-radius: var(--radius-sm);
+		background: oklch(0.78 0.14 85 / 0.2);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		color: var(--gold);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		margin-bottom: 12px;
+		transition: background var(--t-base) var(--ease-out);
+	}
+	.wiki-card:hover .wiki-info-icon { background: oklch(0.78 0.14 85 / 0.3); }
+	.wiki-info h3 {
+		font-family: var(--font-sans);
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--fg);
 		margin-bottom: 4px;
 	}
-
-	.server-status
-	{
-		font-size: 6px;
-		padding: 2px 5px;
+	.wiki-info p {
+		font-size: 11px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--fg-muted);
 	}
-}
-			.swiper-wrapper-container {
-				position: relative;
-				width: 100%;
-				max-width: 1200px;
-				margin: 0 auto;
-				display: flex;
-				align-items: center;
-				box-sizing: border-box;
-				padding: 0 48px;
-			}
-			
-			.swiper-container {
-				width: 100%;
-				overflow: hidden;
-			}
-			
-			.swiper-slide {
-				display: flex;
-				flex-direction: column;
-				box-sizing: border-box;
-			}
-			
-			/* Imagem dos vídeos */
-			.carousel-thumb {
-				width: 100%;
-				aspect-ratio: 16 / 9;
-				object-fit: cover;
-				border-radius: 8px;
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-				transition: transform 0.3s ease;
-			}
-			.carousel-thumb:hover {
-				transform: scale(1.02);
-			}
-			
-			/* Setas */
-			.swiper-button-next,
-			.swiper-button-prev {
-				width: 42px;
-				height: 42px;
-				border-radius: 8px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: absolute;
-				top: 65%;
-				transform: translateY(-50%);
-				z-index: 10;
-				cursor: pointer;
-				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-				transition: background 0.2s;
-			}
-			.swiper-button-prev { left: 0; }
-			.swiper-button-next { right: 0; }
-			
-			.swiper-button-next::after,
-			.swiper-button-prev::after {
-				font-size: 16px;
-				color: #fff;
-			}
-			</style>
-			<div class="top_separator"></div>
-            <div class="middleContent relative reveal">
-                <div class="container_wiki mx-auto p-10 max-sm:p-5">
-                    <div class="flex-1 relative clear-both">
-                        <h2 class="font-bold text-3xl color-dark">Create content and get rewarded!</h2>
-                    </div>
-                    <div class="flex mt-10 justify-center max-sm:flex-col">
-                        <div class="flex flex-1 flex-col call mt-3">
-                            <h4 class="mt-5 max-w-lg color-dark">
-								At Amerika Server, we understand the importance of content creation for popular platforms like YouTube, TikTok, and Twitch. We firmly believe that player-generated content strengthens our community, bringing innovation and fun to our server. It's a chance for you, the player, to stand out and gain recognition, as well as helping to attract new players to our virtual world.                            </h4>
-                            <h4 class="mt-5 max-w-lg color-dark">
-                                When you create content for Amerika Server, you're not just helping to build and expand our community, but you're also getting rewarded for it! We want to encourage your creativity and effort by offering tangible benefits to those who produce and share quality content. This not only benefits you with prizes and rewards but also solidifies your position as an influencer within our community. Be a part of this great experience!                            </h4>
-							<div class="header__info-buttons flex-cc">
-								<!--<a href="?page=panel" class="header__info-newbtn button-new flex-cc"><span>SEND VIDEOS</span></a>-->
-								<a href="https://www.l2amerika.com/signin" target="_blank" rel="noopener noreferrer" class="header__info-newbtn button-new flex-cc"><span>SEND VIDEOS</span></a>
-							</div>
-                        </div>
-                        <div class="gifarea flex flex-1 relative -mb-18 max-sm:mt-4 max-sm:-mb-0">
-                                <video class="object-top h-full" autoplay loop muted playsinline>
-									<!-- Vídeo WebM como opção principal -->
-									<source src="https://www.l2amerika.com/video/gameplay.webm" type="video/webm">
-									<!-- Fallback para MP4 -->
-									<source src="https://www.l2amerika.com/video/gameplay.mp4" type="video/mp4">
-								</video>
-                            <div class="detailGifArea"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			<div class="top_separator"></div>
-            <div class="wiki relative mx-auto pt-6 reveal">
-                <div class="relative">
-                    <h2 class="text-center uppercase" style="opacity: 1; transform: none;">Learn more about the server</h2>
-                </div>
-                <h4 class="text-white text-center max-w-3xl mx-auto mt-6 text-lg p-3">A comprehensive library for everything related to the Amerika Server universe. Here, players can deepen their knowledge about detailed quests, varied items, and unique features of our server, turning their gaming experience into a journey of learning and discoveries.</h4>
-                <h4 class="text-white text-center max-w-3xl mx-auto mt-6 text-lg p-3">Each quest, item, and feature is accurately documented in our WIKI, giving you, the player, the confidence and understanding needed to advance in your adventure. Access the AMERIKA WIKI and master the world of L2Amerika like never before!</h4>
-                <div class="flex flex-auto text-white text-center justify-center mt-6 space-x-4 max-sm:flex-col max-sm:space-x-0 max-sm:items-center max-sm:space-y-2">
-                    <a class="boxWiki bg-cover bg-center flex flex-col items-center justify-end leading-3 hover:opacity-100" style="background-image: url(https://www.l2amerika.com/images/image_bt1.jpg);" href="index.html#">
-                        <div class="flex flex-col w-full pt-4 pb-4 gradient-bg-wiki transition-all">
-                            <h3 class="font-bold text-2xl text-center uppercase text-white">About Amerika Server</h2>
-                            <p class="uppercase">How to start?</p>
-                        </div>
-                    </a>
-                    <a class="boxWiki bg-cover bg-center flex flex-col items-center justify-end leading-3 hover:opacity-100" style="background-image: url(https://www.l2amerika.com/images/image_bt2.jpg);" href="index.html#">
-                        <div class="flex flex-col w-full pt-4 pb-4 gradient-bg-wiki transition-all">
-                            <h3 class="font-bold text-2xl text-center uppercase text-white">Enchants</h2>
-                            <p class="uppercase">Upgrading equipment</p>
-                        </div>
-                    </a>
-                    <a class="boxWiki bg-cover bg-center flex flex-col items-center justify-end leading-3 hover:opacity-100" style="background-image: url(https://www.l2amerika.com/images/image_interface.png);" href="index.html#">
-                        <div class="flex flex-col w-full pt-4 pb-4 gradient-bg-wiki transition-all">
-                            <h3 class="font-bold text-2xl text-center uppercase text-white">New Interface</h2>
-                            <p class="uppercase">See how it works!</p>
-                        </div>
-                    </a>
-                    <a class="boxWiki bg-cover bg-center flex flex-col items-center justify-end leading-3 hover:opacity-100" style="background-image: url(https://www.l2amerika.com/images/farming.jpg);" href="index.html#">
-                        <div class="flex flex-col w-full pt-4 pb-4 gradient-bg-wiki transition-all">
-                            <h3 class="font-bold text-2xl text-center uppercase text-white">Farming</h2>
-                            <p class="uppercase">Explore the Zones</p>
-                        </div>
-                    </a>
-                </div>
-				<div class="header__info-buttons flex-cc">
-					<a href="https://www.l2amerika.com/?page=info" class="header__info-newbtn_center button-new flex-cc"><span>AMERIKA WIKI</span></a>
-				</div>
-				<br>
-            </div>
-					</div>
-					
-				</article>
-				
-			</section>
-			<div class="top_separator"></div>
-				<footer class="relative custom-footer">
-					<div class="background-image footer-bg-image"></div>
-					<div class="container_wiki footer-container">
-						<div class="footer-content">
-							<div class="logo footer-logo"><img alt="Amerika" src="https://www.l2amerika.com/images/logo_color_white.png" class="footer-logo-img" /></div>
-							<br>
-								<div class="social-icons-container">
-									<a href="https://discord.com/invite/vAWtEFt2hx" target="_blank">
-										<img src="https://www.l2amerika.com/images/discord_logo_1.png" alt="Discord Logo" class="social-icon discord-icon">
-									</a>
-									<a href="https://facebook.com/Lineage2Amerika" target="_blank">
-										<img src="https://www.l2amerika.com/images/facebook_logo.png" alt="Facebook Logo" class="social-icon facebook-icon">
-									</a>
-									<a href="https://www.youtube.com/@AmerikaL2" target="_blank">
-										<img src="https://www.l2amerika.com/images/youtube_logo.png" alt="YouTube Logo" class="social-icon youtube-icon">
-									</a>
-								</div>
-							<br>
-							<p class="footer-text copyright-text">
-								Copyright © 2008 - 2026 Amerika. Todos os direitos reservados. Site Designed by Amerika.<br>
-								<!-- Amerika Software LTDA -->
-							</p>
-							<div class="footer-links">
-								<a href="https://www.l2amerika.com/?page=privacy_policy" class="copyright-text">Privacy Policy</a>
-							</div>
-							<div style="display:none;">
-								<a href="https://info.flagcounter.com/l9i2">
-									<img src="https://s05.flagcounter.com/count/l9i2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_12/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0">
-								</a>
-							</div>
-							<br>
-						</div>
-					</div>
-				</footer>
-        </div>
-		
-		<script type="81c0c91b339f60135225285c-text/javascript">
-		$(document).ready(function(){
-			
-			$('article').css({ 'min-height': ''+($('aside').height())+'px' });
-			
-			if($('input[name="lkey"]').length > 1) {
-				$('input[name="lkey"]').val('');
-			}
 
-		});
-		</script>
+	/* ==========================================================
+	   DISCORD CTA
+	   ========================================================== */
+	.discord-cta-section {
+		position: relative;
+		padding: 80px 0;
+		overflow: hidden;
+	}
+	.discord-cta-section::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(ellipse at center, rgba(88, 101, 242, 0.1), transparent 60%);
+		pointer-events: none;
+	}
+	.discord-cta-inner {
+		position: relative;
+		max-width: 720px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 0 16px;
+	}
+	.discord-icon {
+		width: 64px; height: 64px;
+		border-radius: var(--radius-xl);
+		background: rgba(88, 101, 242, 0.1);
+		border: 1px solid rgba(88, 101, 242, 0.3);
+		color: var(--discord);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 24px;
+		font-size: 28px;
+	}
+	.discord-meta {
+		margin-top: 24px;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 16px;
+		border-radius: 999px;
+		background: var(--surface-glass);
+		border: 1px solid rgba(88, 101, 242, 0.2);
+		color: var(--fg);
+		font-size: 13px;
+	}
+	.discord-meta i { color: var(--fg-muted); }
+	.discord-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		justify-content: center;
+		align-items: center;
+		margin-top: 32px;
+	}
 
-				
-		<!-- Important Terms to JS Scripts -->
-		<input type='hidden' id='l11015' value='Please check your internet connection. The page is taking too long to respond.' /><input type='hidden' id='l12055' value='Sorry, an error has occured! Please try again.' /><input type='hidden' id='l11017' value='Security Code' /><input type='hidden' id='l11018' value='Please fill in the code below, for security reasons.' /><input type='hidden' id='l20001' value='Wait...' /><input type='hidden' id='l40044' value='Your security key has expired! We will load the page and please try again.' />
-		
-		<!-- Botão flutuante do Discord com texto ao lado do ícone -->
-		<a href="https://discord.gg/vAWtEFt2hx" target="_blank" class="discord-float" title="Entre no nosso Discord!">
-			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 24 24">
-				<path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.07.07 0 0 0-.074.035c-.21.372-.444.86-.608 1.24a18.412 18.412 0 0 0-5.51 0 12.61 12.61 0 0 0-.617-1.24.075.075 0 0 0-.073-.035 19.736 19.736 0 0 0-4.885 1.515.064.064 0 0 0-.03.027C.533 9.045-.32 13.579.099 18.057a.082.082 0 0 0 .031.055c2.052 1.504 4.041 2.416 5.992 3.02a.07.07 0 0 0 .078-.027c.46-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.041-.104 13.257 13.257 0 0 1-1.872-.9.075.075 0 0 1-.008-.126c.126-.095.253-.194.373-.295a.07.07 0 0 1 .075-.01c3.927 1.793 8.18 1.793 12.061 0a.07.07 0 0 1 .076.01c.12.101.247.2.373.295a.075.075 0 0 1-.006.126 12.298 12.298 0 0 1-1.873.899.076.076 0 0 0-.041.105c.36.699.773 1.364 1.225 1.994a.07.07 0 0 0 .078.027c1.961-.604 3.95-1.516 6.002-3.02a.078.078 0 0 0 .03-.055c.5-5.177-.838-9.663-3.548-13.661a.061.061 0 0 0-.03-.028zM8.02 15.331c-1.183 0-2.156-1.085-2.156-2.419 0-1.333.953-2.418 2.157-2.418 1.21 0 2.175 1.093 2.156 2.418 0 1.334-.953 2.419-2.157 2.419zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.953-2.418 2.157-2.418 1.21 0 2.174 1.093 2.156 2.418 0 1.334-.946 2.419-2.156 2.419z"/>
-			</svg>
-			<span>Join our Discord</span>
+	/* ==========================================================
+	   FOOTER
+	   ========================================================== */
+	footer {
+		position: relative;
+		border-top: 1px solid var(--border);
+		background: oklch(0.14 0.005 280 / 0.5);
+	}
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px;
+		padding: 64px 0;
+	}
+	@media (min-width: 640px)  { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(4, 1fr); gap: 32px; } }
+
+	.footer-brand .brand { margin-bottom: 16px; }
+	.footer-brand p {
+		font-size: 14px;
+		color: var(--fg-muted);
+		line-height: 1.7;
+		margin-bottom: 16px;
+	}
+	.footer-socials {
+		display: flex;
+		gap: 8px;
+	}
+	.footer-social {
+		width: 36px; height: 36px;
+		border-radius: var(--radius-sm);
+		background: var(--bg-secondary);
+		border: 1px solid var(--border);
+		color: var(--fg-muted);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		transition: all var(--t-fast) var(--ease-out);
+	}
+	.footer-social:hover {
+		color: var(--gold);
+		border-color: oklch(0.78 0.14 85 / 0.3);
+	}
+
+	.footer-col h4 {
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		color: var(--fg);
+		margin-bottom: 16px;
+	}
+	.footer-col li { margin-bottom: 10px; }
+	.footer-col a {
+		font-size: 14px;
+		color: var(--fg-muted);
+		transition: color var(--t-fast) var(--ease-out);
+	}
+	.footer-col a:hover { color: var(--gold); }
+
+	.footer-bottom {
+		padding: 24px 0;
+		border-top: 1px solid var(--border);
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		align-items: center;
+		justify-content: space-between;
+	}
+	@media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
+	.footer-bottom p {
+		font-size: 12px;
+		color: var(--fg-muted);
+	}
+
+	/* ==========================================================
+	   Discord floating button
+	   ========================================================== */
+	.discord-float {
+		position: fixed;
+		bottom: 24px; right: 24px;
+		z-index: 40;
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 12px 18px;
+		border-radius: 999px;
+		color: var(--fg);
+		background: var(--surface-glass-strong);
+		border: 1px solid rgba(88, 101, 242, 0.5);
+		backdrop-filter: blur(12px) saturate(140%);
+		-webkit-backdrop-filter: blur(12px) saturate(140%);
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+		font-size: 13px;
+		font-weight: 600;
+		transition: all var(--t-base) var(--ease-out);
+	}
+	.discord-float:hover {
+		border-color: rgba(88, 101, 242, 0.9);
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 24px rgba(88, 101, 242, 0.35);
+		transform: translateY(-2px);
+	}
+	.discord-float i { color: var(--discord); font-size: 18px; }
+	@media (max-width: 480px) {
+		.discord-float span { display: none; }
+		.discord-float { padding: 14px; }
+	}
+
+	</style>
+</head>
+<body>
+
+<!-- GTM no-script -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJHJZSGB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ========================================================
+     NAVBAR
+     ======================================================== -->
+<nav class="navbar" id="navbar">
+	<div class="nav-inner">
+		<a href="#" class="brand">
+			<div class="brand-mark">A</div>
+			<span class="brand-text">AMERIKA</span>
 		</a>
-		
-		<style>
-		.discord-float {
-			position: fixed;
-			bottom: 25px;
-			right: 25px;
-			z-index: 9999;
-			background: linear-gradient(135deg, #7289da, #5865f2);
-			color: #fff;
-			padding: 10px 16px;
-			border-radius: 50px;
-			text-decoration: none;
-			font-family: 'Segoe UI', sans-serif;
-			display: flex;
-			align-items: center;
-			gap: 10px;
-			font-size: 14px;
-			font-weight: 600;
-			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-			transition: transform 0.25s ease, box-shadow 0.25s ease;
-		}
-		.discord-float:hover {
-			transform: scale(1.05);
-			box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-		}
-		</style>
-		
-<!--<div id="event-bar" style="position: fixed; bottom: 0; left: 0; width: 100%; background: linear-gradient(180deg, rgba(20, 20, 20, 0.98) 0%, rgba(0, 0, 0, 1) 100%); color: white; padding: 15px; text-align: center; z-index: 9998; border-top: 2px solid #d4af37; font-family: 'Segoe UI', Roboto, sans-serif; box-shadow: 0 -10px 25px rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
-    
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <span id="event-icon" style="font-size: 20px;">⚔️</span>
-        <span style="font-weight: 800; letter-spacing: 1.5px; font-size: 13px; text-transform: uppercase; color: #eee; text-shadow: 1px 1px 2px #000;">
-            <span id="event-status-text">NEXT PVP GLOBAL EVENT:</span> 
-            <span id="event-name" style="color: #d4af37; display: inline-block; margin-left: 5px;">...</span>
-        </span>
-    </div>
-    
-    <div id="countdown" style="font-family: 'Courier New', Courier, monospace; font-size: 1.5em; font-weight: bold; color: #fff; background: #1a1a1a; padding: 5px 15px; border-radius: 8px; border: 1px solid #d4af37; box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2), 0 0 15px rgba(212, 175, 55, 0.3); min-width: 140px; letter-spacing: 2px; transition: all 0.5s; display: none;">
-        00:00:00
-    </div>
 
-    <button onclick="document.getElementById('event-bar').style.display='none'" 
-            style="background: linear-gradient(180deg, #444 0%, #222 100%); border: 1px solid #555; color: #bbb; cursor: pointer; border-radius: 4px; font-size: 11px; font-weight: bold; padding: 6px 12px; transition: all 0.3s; text-transform: uppercase; outline: none;"
-            onmouseover="this.style.color='#fff'; this.style.borderColor='#888'; this.style.background='#333'"
-            onmouseout="this.style.color='#bbb'; this.style.borderColor='#555'; this.style.background='linear-gradient(180deg, #444 0%, #222 100%)'">
-        FECHAR    </button>
-</div>-->
+		<div class="nav-links">
+			<a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=news&id=1"><i class="fas fa-newspaper"></i> News</a>
+			<a class="nav-link" href="#features"><i class="fas fa-book"></i> Info</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=download"><i class="fas fa-download"></i> Downloads</a>
+			<a class="nav-link" href="https://www.l2amerika.com/signup"><i class="fas fa-user-plus"></i> Register</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=rankings"><i class="fas fa-trophy"></i> Rankings</a>
+		</div>
 
-<script type="81c0c91b339f60135225285c-text/javascript">
-function updateCountdown() {
-    const now = new Date();
-    const eventDurationHours = 2;
-    const cdBox = document.getElementById("countdown");
-    const statusTxt = document.getElementById("event-status-text");
-    const nameBox = document.getElementById("event-name");
-    const icon = document.getElementById("event-icon");
-    
-    const txtRunning = "EM ANDAMENTO";
-    const txtNext = "NEXT PVP GLOBAL EVENT:";
+		<div class="nav-cta">
+			<a href="https://www.l2amerika.com/signin" class="btn btn-outline btn-sm btn-login"><i class="fas fa-user"></i> Login</a>
+			<a href="https://www.l2amerika.com/Amerika_Installer.exe" class="btn btn-primary btn-sm btn-install"><i class="fab fa-windows"></i> Instalar</a>
+			<button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+				<i class="fas fa-bars" id="hamburger-icon"></i>
+			</button>
+		</div>
+	</div>
 
-    const eventConfig = [
-        { day: 3, hour: 19, min: 30, name: "WEDNESDAY" }, 
-        { day: 4, hour: 23, min: 30, name: "THURSDAY" }
-    ];
+	<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-inner">
+			<a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=news&id=1"><i class="fas fa-newspaper"></i> News</a>
+			<a class="nav-link" href="#features"><i class="fas fa-book"></i> Info</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=download"><i class="fas fa-download"></i> Downloads</a>
+			<a class="nav-link" href="https://www.l2amerika.com/signup"><i class="fas fa-user-plus"></i> Register</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=rankings"><i class="fas fa-trophy"></i> Rankings</a>
+			<div class="mobile-cta">
+				<a href="https://www.l2amerika.com/signin" class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Login</a>
+				<a href="https://www.l2amerika.com/Amerika_Installer.exe" class="btn btn-primary btn-sm"><i class="fab fa-windows"></i> Instalar</a>
+			</div>
+		</div>
+	</div>
+</nav>
 
-    let nextEvent = null;
-    let activeEvent = null;
-    let minDiff = Infinity;
+<!-- ========================================================
+     HERO
+     ======================================================== -->
+<section class="hero">
+	<div class="hero-bg">
+		<video autoplay loop muted playsinline>
+			<source src="https://www.l2amerika.com/media/cinematicl2.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="hero-overlay-top"></div>
+	<div class="hero-overlay-side"></div>
 
-    eventConfig.forEach(ev => {
-        let startDate = new Date(now);
-        startDate.setUTCHours(ev.hour, ev.min, 0, 0);
-        let dayDiff = (ev.day - now.getUTCDay() + 7) % 7;
-        startDate.setUTCDate(now.getUTCDate() + dayDiff);
-        
-        let endDate = new Date(startDate.getTime() + (eventDurationHours * 60 * 60 * 1000));
+	<div class="hero-content">
+		<div class="hero-grid">
+			<div class="hero-text">
+				<span class="eyebrow hero-eyebrow">17 Anos Online</span>
+				<h1 class="hero-title">AMERIKA</h1>
+				<h2 class="hero-subtitle">HIGH FIVE PVP SERVER</h2>
+				<p class="hero-desc">
+					A verdadeira essência do L2 PvP: 17 anos online, sem wipes, eventos automáticos, sieges e Territory Wars.
+					Cace bosses colossais, garanta drops especiais e torne-se a lenda que sempre quis ser.
+				</p>
+				<div class="hero-badges">
+					<span class="hero-badge"><i class="fas fa-shield-alt"></i> 17 Anos Online</span>
+					<span class="hero-badge"><i class="fas fa-ban"></i> Sem Wipes</span>
+					<span class="hero-badge"><i class="fas fa-users"></i> 1813 Players Agora</span>
+				</div>
+				<div class="hero-cta">
+					<a href="https://www.l2amerika.com/signup" class="btn btn-primary"><i class="fas fa-gamepad"></i> Registrar Agora</a>
+					<a href="https://www.l2amerika.com/Amerika_Installer.exe" class="btn btn-outline"><i class="fas fa-download"></i> Download Client</a>
+				</div>
+			</div>
 
-        // Se o evento é HOJE e está rolando
-        if (now >= startDate && now < endDate && now.getUTCDay() === ev.day) {
-            activeEvent = { name: ev.name };
-        } else {
-            // Se já passou o fim hoje, busca o da semana que vem
-            if (now >= endDate) {
-                startDate.setUTCDate(startDate.getUTCDate() + 7);
-            }
-            const diff = startDate - now;
-            if (diff < minDiff) {
-                minDiff = diff;
-                nextEvent = { date: startDate, name: ev.name };
-            }
-        }
-    });
+			<div class="hero-orbs">
+				<!-- Orb principal -->
+				<div class="orb orb-main">
+					<div class="orb-ring"></div>
+					<div class="orb-ring dashed"></div>
+					<div class="orb-card">
+						<div class="orb-rate">200x</div>
+						<div class="orb-sub">High Five</div>
+						<span class="orb-status online"><span class="dot online"></span>Online: 1813</span>
+					</div>
+				</div>
+				<!-- Orb secundário -->
+				<div class="orb orb-secondary">
+					<div class="orb-static"></div>
+					<div class="orb-static inner"></div>
+					<div class="orb-card">
+						<div class="orb-rate">BETA</div>
+						<div class="orb-sub">High Five</div>
+						<span class="orb-status offline"><span class="dot offline"></span>Offline</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    if (activeEvent) {
-        // EVENTO ONLINE (MOSTRA CONTADOR VERDE)
-        statusTxt.innerHTML = txtRunning + "!";
-        nameBox.innerHTML = activeEvent.name;
-        cdBox.innerHTML = "ONLINE";
-        cdBox.style.display = "block";
-        cdBox.style.color = "#2ecc71";
-        cdBox.style.borderColor = "#2ecc71";
-        cdBox.style.boxShadow = "0 0 20px rgba(46, 204, 113, 0.6)";
-        icon.innerHTML = "🔥";
-    } else {
-        // PRÓXIMO EVENTO
-        statusTxt.innerHTML = txtNext;
-        const localTime = nextEvent.date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: false });
-        let sep = " às ";
-        nameBox.innerHTML = nextEvent.name + sep + localTime;
-        icon.innerHTML = "⚔️";
+	<div class="hero-bottom-fade"></div>
+</section>
 
-        // Regra do Contador: Só mostra se for o dia do evento (UTC)
-        if (now.getUTCDay() === nextEvent.date.getUTCDay()) {
-            const distance = nextEvent.date - now;
-            const h = Math.floor((distance % 86400000) / 3600000);
-            const m = Math.floor((distance % 3600000) / 60000);
-            const s = Math.floor((distance % 60000) / 1000);
-            
-            cdBox.style.display = "block";
-            cdBox.innerHTML = (h<10?"0"+h:h)+"h "+(m<10?"0"+m:m)+"m "+(s<10?"0"+s:s)+"s";
-            cdBox.style.color = "#fff";
-            cdBox.style.borderColor = "#d4af37";
-            cdBox.style.boxShadow = "inset 0 0 10px rgba(212, 175, 55, 0.2), 0 0 15px rgba(212, 175, 55, 0.3)";
-        } else {
-            // Se não for o dia do evento, esconde o relógio
-            cdBox.style.display = "none";
-        }
-    }
-}
+<!-- ========================================================
+     FEATURES
+     ======================================================== -->
+<section class="section" id="features">
+	<div class="section-bg-center"></div>
+	<div class="container" style="position: relative;">
+		<div class="section-head reveal">
+			<span class="eyebrow">Server Features</span>
+			<h2 class="section-title">Conheça o Servidor</h2>
+			<p class="section-sub">
+				Uma biblioteca completa sobre o universo do Amerika Server. Aprofunde seu conhecimento sobre quests,
+				itens e funcionalidades únicas do nosso servidor.
+			</p>
+		</div>
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
-    <script src="https://www.l2amerika.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="81c0c91b339f60135225285c-|49" defer></script>
-<script data-cfasync="false">
+		<div class="features-grid">
+			<article class="feature reveal" data-delay="1">
+				<div class="feature-icon"><i class="fas fa-khanda"></i></div>
+				<h3>PvP Intenso</h3>
+				<p>Batalhas épicas com classes balanceadas, farm facilitado e drops especiais que tornam cada combate único.</p>
+			</article>
+			<article class="feature reveal" data-delay="2">
+				<div class="feature-icon"><i class="fas fa-fire"></i></div>
+				<h3>Eventos Automáticos</h3>
+				<p>Eventos acontecendo 24/7 com recompensas exclusivas. TVT, CTF, Death Match e muito mais.</p>
+			</article>
+			<article class="feature reveal" data-delay="3">
+				<div class="feature-icon"><i class="fas fa-chess-rook"></i></div>
+				<h3>Sieges &amp; TW</h3>
+				<p>Sieges de castelo e Territory Wars semanais com prêmios exclusivos para os clans vencedores.</p>
+			</article>
+			<article class="feature reveal" data-delay="1">
+				<div class="feature-icon"><i class="fas fa-magic"></i></div>
+				<h3>Enchant System</h3>
+				<p>Sistema de enchant balanceado com safe enchant, blessed scrolls e rates especiais para equipamentos.</p>
+			</article>
+			<article class="feature reveal" data-delay="2">
+				<div class="feature-icon"><i class="fas fa-scroll"></i></div>
+				<h3>Custom Features</h3>
+				<p>Interface personalizada, sistema de farm progressivo, NPCs exclusivos e muito mais.</p>
+			</article>
+			<article class="feature reveal" data-delay="3">
+				<div class="feature-icon"><i class="fas fa-skull"></i></div>
+				<h3>Bosses Épicos</h3>
+				<p>Cace bosses colossais com drops exclusivos. Baium, Antharas, Valakas e muitos outros.</p>
+			</article>
+		</div>
+
+		<div class="features-cta reveal">
+			<a href="https://www.l2amerika.com/?page=info" class="btn btn-primary"><i class="fas fa-scroll"></i> Amerika Wiki</a>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     COMMUNITY VIDEOS
+     ======================================================== -->
+<section class="section" id="community">
+	<div class="section-bg-top"></div>
+	<div class="container" style="position: relative;">
+		<div class="section-head reveal">
+			<span class="eyebrow">Community</span>
+			<h2 class="section-title">Vídeos da Comunidade</h2>
+			<p class="section-sub">Assista os melhores momentos do Amerika criados pelos nossos jogadores!</p>
+		</div>
+
+		<div class="videos-grid">
+			<a class="video-card reveal" data-delay="1" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ES2cd-85zC0">
+				<img src="https://img.youtube.com/vi/ES2cd-85zC0/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="2" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=l1Z1rqK0O2Y">
+				<img src="https://img.youtube.com/vi/l1Z1rqK0O2Y/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="3" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2KSScxPkcRw">
+				<img src="https://img.youtube.com/vi/2KSScxPkcRw/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="4" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=pBvQcApoXoU">
+				<img src="https://img.youtube.com/vi/pBvQcApoXoU/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="1" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=R8ggBUS4t94">
+				<img src="https://img.youtube.com/vi/R8ggBUS4t94/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="2" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=C9iR-ZfX9qI">
+				<img src="https://img.youtube.com/vi/C9iR-ZfX9qI/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="3" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=E1byHP0FgQo">
+				<img src="https://img.youtube.com/vi/E1byHP0FgQo/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="4" target="_blank" rel="noopener" href="https://www.l2amerika.com/?page=gallery&t=video">
+				<img src="https://www.l2amerika.com/imgs/gallery/thumbnail/7639882113285770503.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+		</div>
+
+		<div class="videos-cta reveal">
+			<a href="https://www.l2amerika.com/?page=gallery&t=video" class="btn btn-outline"><i class="fas fa-video"></i> Ver todos os vídeos</a>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     CONTENT CREATOR
+     ======================================================== -->
+<section class="section creator">
+	<div class="container" style="position: relative;">
+		<div class="creator-grid">
+			<div class="creator-text reveal">
+				<span class="eyebrow">Content Creators</span>
+				<h2 class="section-title" style="text-align: left;">Crie conteúdo e seja recompensado!</h2>
+				<p>
+					No Amerika Server, valorizamos a criação de conteúdo para plataformas populares como YouTube, TikTok e Twitch.
+					Acreditamos que o conteúdo gerado pelos jogadores fortalece nossa comunidade.
+				</p>
+				<p>
+					Quando você cria conteúdo para o Amerika, não apenas ajuda a expandir nossa comunidade,
+					mas também recebe recompensas por isso! Queremos incentivar sua criatividade oferecendo benefícios tangíveis.
+				</p>
+
+				<div class="creator-stats">
+					<div class="creator-stat">
+						<div class="creator-stat-icon"><i class="fab fa-youtube"></i></div>
+						<span class="creator-stat-value">150+</span>
+						<span class="creator-stat-label">YouTube</span>
+					</div>
+					<div class="creator-stat">
+						<div class="creator-stat-icon"><i class="fab fa-tiktok"></i></div>
+						<span class="creator-stat-value">300+</span>
+						<span class="creator-stat-label">TikTok</span>
+					</div>
+					<div class="creator-stat">
+						<div class="creator-stat-icon"><i class="fas fa-trophy"></i></div>
+						<span class="creator-stat-value">50+</span>
+						<span class="creator-stat-label">Prêmios</span>
+					</div>
+				</div>
+
+				<a href="https://www.l2amerika.com/signin" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Vídeos</a>
+			</div>
+
+			<div class="creator-visual reveal" data-delay="2">
+				<video autoplay loop muted playsinline>
+					<source src="https://www.l2amerika.com/video/gameplay.webm" type="video/webm">
+					<source src="https://www.l2amerika.com/video/gameplay.mp4" type="video/mp4">
+				</video>
+				<div class="creator-visual-cap">
+					<div class="creator-visual-cap-icon"><i class="fas fa-play"></i></div>
+					<div>
+						<p>Amerika Gameplay</p>
+						<p>Criado pela comunidade</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     WIKI
+     ======================================================== -->
+<section class="section">
+	<div class="section-bg-bottom"></div>
+	<div class="container" style="position: relative;">
+		<div class="section-head reveal">
+			<span class="eyebrow">Wiki</span>
+			<h2 class="section-title">Saiba Mais Sobre o Servidor</h2>
+			<p class="section-sub">
+				Uma biblioteca completa sobre o universo do Amerika. Cada quest, item e funcionalidade está documentada,
+				dando a você a confiança necessária para avançar na sua aventura.
+			</p>
+		</div>
+
+		<div class="wiki-grid">
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="1">
+				<img src="https://www.l2amerika.com/images/image_bt1.jpg" alt="Sobre o Servidor" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-khanda"></i></div>
+					<h3>Sobre o Servidor</h3>
+					<p>Como começar?</p>
+				</div>
+			</a>
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="2">
+				<img src="https://www.l2amerika.com/images/image_bt2.jpg" alt="Enchants" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-magic"></i></div>
+					<h3>Enchants</h3>
+					<p>Upgrade de equipamentos</p>
+				</div>
+			</a>
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="3">
+				<img src="https://www.l2amerika.com/images/image_interface.png" alt="Nova Interface" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-desktop"></i></div>
+					<h3>Nova Interface</h3>
+					<p>Veja como funciona!</p>
+				</div>
+			</a>
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="4">
+				<img src="https://www.l2amerika.com/images/farming.jpg" alt="Farming" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-wheat-awn"></i></div>
+					<h3>Farming</h3>
+					<p>Explore as Zonas</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     DISCORD CTA
+     ======================================================== -->
+<section class="discord-cta-section">
+	<div class="discord-cta-inner reveal">
+		<div class="discord-icon"><i class="fab fa-discord"></i></div>
+		<h2 class="section-title">Junte-se à Nossa Comunidade</h2>
+		<p class="section-sub">
+			Conecte-se com milhares de jogadores no nosso Discord. Encontre grupos, acompanhe novidades e participe de eventos exclusivos.
+		</p>
+		<div class="discord-actions">
+			<a href="https://discord.com/invite/vAWtEFt2hx" target="_blank" rel="noopener" class="btn btn-discord">
+				<i class="fab fa-discord"></i> Entrar no Discord
+			</a>
+			<div class="discord-meta">
+				<span class="dot online" style="width:8px; height:8px;"></span>
+				<i class="fas fa-users"></i>
+				<span>2.4k+ online</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
+<footer>
+	<div class="container">
+		<div class="footer-grid">
+			<div class="footer-brand">
+				<a href="#" class="brand">
+					<div class="brand-mark">A</div>
+					<span class="brand-text">AMERIKA</span>
+				</a>
+				<p>O servidor PvP High Five mais respeitado. 17 anos online, sem wipes, com a melhor experiência de L2 PvP.</p>
+				<div class="footer-socials">
+					<a class="footer-social" href="https://discord.com/invite/vAWtEFt2hx" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
+					<a class="footer-social" href="https://facebook.com/Lineage2Amerika" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+					<a class="footer-social" href="https://www.youtube.com/@AmerikaL2" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+				</div>
+			</div>
+
+			<div class="footer-col">
+				<h4>Servidor</h4>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="https://www.l2amerika.com/?page=news&id=1">News</a></li>
+					<li><a href="https://www.l2amerika.com/?page=download">Downloads</a></li>
+					<li><a href="https://www.l2amerika.com/?page=rankings">Rankings</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Comunidade</h4>
+				<ul>
+					<li><a href="https://discord.com/invite/vAWtEFt2hx" target="_blank" rel="noopener">Discord</a></li>
+					<li><a href="https://facebook.com/Lineage2Amerika" target="_blank" rel="noopener">Facebook</a></li>
+					<li><a href="https://www.youtube.com/@AmerikaL2" target="_blank" rel="noopener">YouTube</a></li>
+					<li><a href="https://www.l2amerika.com/?page=gallery">Galeria</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Suporte</h4>
+				<ul>
+					<li><a href="https://www.l2amerika.com/?page=info">Server Wiki</a></li>
+					<li><a href="https://www.l2amerika.com/?page=bug_policy">Bug Policy</a></li>
+					<li><a href="https://www.l2amerika.com/?page=boss-status">Boss Status</a></li>
+					<li><a href="https://www.l2amerika.com/?page=castle-siege">Castle Siege</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>&copy; 2008 - 2026 Amerika Server. Todos os direitos reservados.</p>
+			<p>Lineage 2 e marcas associadas são propriedade da NCSoft Corporation.</p>
+		</div>
+	</div>
+</footer>
+
+<!-- Discord float -->
+<a href="https://discord.gg/vAWtEFt2hx" target="_blank" rel="noopener" class="discord-float" title="Entre no nosso Discord!">
+	<i class="fab fa-discord"></i><span>Join our Discord</span>
+</a>
+
+<script>
 (function () {
-	// Sticky menu blur ao scrollar
-	var menu = document.querySelector('.Top_Menu');
-	if (menu) {
-		var threshold = 40;
-		var ticking = false;
-		function update() {
-			if (window.scrollY > threshold) {
-				menu.classList.add('is-scrolled');
-			} else {
-				menu.classList.remove('is-scrolled');
-			}
-			ticking = false;
-		}
-		window.addEventListener('scroll', function () {
-			if (!ticking) {
-				window.requestAnimationFrame(update);
-				ticking = true;
-			}
-		}, { passive: true });
-		update();
+	// Navbar — scroll blur
+	var navbar = document.getElementById('navbar');
+	var navTicking = false;
+	function updateNav() {
+		if (window.scrollY > 20) navbar.classList.add('scrolled');
+		else navbar.classList.remove('scrolled');
+		navTicking = false;
 	}
+	window.addEventListener('scroll', function () {
+		if (!navTicking) { window.requestAnimationFrame(updateNav); navTicking = true; }
+	}, { passive: true });
+	updateNav();
+
+	// Mobile menu toggle
+	var hamburger = document.getElementById('hamburger');
+	var mobile    = document.getElementById('mobile-menu');
+	var iconEl    = document.getElementById('hamburger-icon');
+	var open = false;
+	hamburger.addEventListener('click', function () {
+		open = !open;
+		mobile.classList.toggle('open', open);
+		iconEl.className = open ? 'fas fa-times' : 'fas fa-bars';
+		hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+	});
+	// Fecha mobile menu ao clicar em link
+	mobile.querySelectorAll('.nav-link, .btn').forEach(function (el) {
+		el.addEventListener('click', function () {
+			open = false;
+			mobile.classList.remove('open');
+			iconEl.className = 'fas fa-bars';
+			hamburger.setAttribute('aria-expanded', 'false');
+		});
+	});
 
 	// Scroll reveal
 	if ('IntersectionObserver' in window) {
 		var io = new IntersectionObserver(function (entries) {
 			entries.forEach(function (entry) {
 				if (entry.isIntersecting) {
-					entry.target.classList.add('is-visible');
+					entry.target.classList.add('in');
 					io.unobserve(entry.target);
 				}
 			});
 		}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 		document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 	} else {
-		document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+		document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
 	}
 })();
 </script>
+
 </body>
 </html>
