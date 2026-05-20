@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#0a0a14" />
+
+	<title>Amerika — High Five PvP Server | Lineage 2</title>
+	<meta name="description" content="Amerika, o servidor PvP High Five mais respeitado. 17 anos online, sem wipes, eventos automáticos, sieges e Territory Wars." />
+
+	<meta property="og:title" content="Amerika - High Five PvP Server" />
+	<meta property="og:description" content="A verdadeira essência do L2 PvP: 17 anos online, sem wipes, eventos automáticos." />
+	<meta property="og:url" content="https://www.l2amerika.com" />
+	<meta property="og:site_name" content="Amerika" />
+	<meta property="og:type" content="website" />
+
+	<link rel="shortcut icon" href="https://www.l2amerika.com/imgs/favicon.ico" />
+
+	<!-- Fontes -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+	<!-- Font Awesome para ícones -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KLZ8RMK7JE"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-KLZ8RMK7JE');
+	</script>
+
+	<!-- GTM -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MJHJZSGB');</script>
+
+	<style>
+	/* ==========================================================
+	   Design tokens (portados do v2/app/globals.css)
+	   ========================================================== */
+	:root {
+		--bg:               oklch(0.10 0.005 280);
+		--bg-card:          oklch(0.14 0.005 280);
+		--bg-secondary:     oklch(0.18 0.005 280);
+		--border:           oklch(0.22 0.01 280);
+		--fg:               oklch(0.95 0.01 90);
+		--fg-muted:         oklch(0.60 0.02 90);
+		--gold:             oklch(0.78 0.14 85);
+		--gold-light:       oklch(0.85 0.14 85);
+		--gold-dark:        oklch(0.60 0.14 85);
+		--gold-fg:          oklch(0.12 0.005 280);
+		--emerald:          oklch(0.70 0.18 155);
+		--red:              oklch(0.65 0.22 25);
+		--discord:          #5865F2;
+
+		--surface-glass:        rgba(20, 18, 30, 0.6);
+		--surface-glass-strong: rgba(12, 10, 22, 0.8);
+		--glow-gold:        0 0 30px oklch(0.78 0.14 85 / 0.3);
+		--glow-gold-strong: 0 0 40px oklch(0.78 0.14 85 / 0.5);
+
+		--radius-sm: 6px;
+		--radius:    10px;
+		--radius-lg: 14px;
+		--radius-xl: 18px;
+
+		--font-sans:   'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+		--font-cinzel: 'Cinzel', serif;
+
+		--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+		--t-fast: 180ms;
+		--t-base: 280ms;
+		--t-slow: 600ms;
+
+		--max-w: 1280px;
+	}
+
+	/* Reset minimalista */
+	*, *::before, *::after { box-sizing: border-box; }
+	* { margin: 0; padding: 0; }
+	html { scroll-behavior: smooth; }
+	body {
+		font-family: var(--font-sans);
+		color: var(--fg);
+		background: var(--bg);
+		min-height: 100vh;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+	a { color: inherit; text-decoration: none; }
+	img, svg, video { display: block; max-width: 100%; }
+	button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; }
+	ul { list-style: none; }
+
+	a:focus-visible, button:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
+		border-radius: var(--radius-sm);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+
+	/* ==========================================================
+	   Animações
+	   ========================================================== */
+	@keyframes pulse-glow {
+		0%, 100% { box-shadow: 0 0 0 0 oklch(0.78 0.14 85 / 0.4); }
+		50%      { box-shadow: 0 0 22px 5px oklch(0.78 0.14 85 / 0.55); }
+	}
+	@keyframes spin-slow         { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+	@keyframes spin-slow-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+	@keyframes shimmer {
+		0%   { background-position: -200% center; }
+		100% { background-position: 200% center; }
+	}
+	@keyframes pulse-dot {
+		0%, 100% { transform: scale(1);   opacity: 1;   }
+		50%      { transform: scale(1.5); opacity: 0.5; }
+	}
+	@keyframes fade-up {
+		from { opacity: 0; transform: translateY(24px); }
+		to   { opacity: 1; transform: translateY(0); }
+	}
+
+	/* Scroll reveal */
+	.reveal { opacity: 0; transform: translateY(28px); transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out); }
+	.reveal.in { opacity: 1; transform: translateY(0); }
+	.reveal[data-delay="1"].in { transition-delay: 100ms; }
+	.reveal[data-delay="2"].in { transition-delay: 200ms; }
+	.reveal[data-delay="3"].in { transition-delay: 300ms; }
+	.reveal[data-delay="4"].in { transition-delay: 400ms; }
+	.reveal[data-delay="5"].in { transition-delay: 500ms; }
+
+	/* ==========================================================
+	   Layout helpers
+	   ========================================================== */
+	.container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 16px; }
+	@media (min-width: 640px) { .container { padding: 0 24px; } }
+	@media (min-width: 1024px) { .container { padding: 0 32px; } }
+
+	.eyebrow {
+		display: inline-block;
+		padding: 5px 12px;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: var(--gold);
+		background: oklch(0.78 0.14 85 / 0.05);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		border-radius: 999px;
+	}
+
+	.section-title {
+		font-family: var(--font-cinzel);
+		font-size: clamp(28px, 4vw, 40px);
+		font-weight: 700;
+		color: var(--fg);
+		margin: 16px 0 16px;
+		text-wrap: balance;
+	}
+	.section-sub {
+		max-width: 640px;
+		margin: 0 auto;
+		color: var(--fg-muted);
+		font-size: 16px;
+		line-height: 1.7;
+		text-wrap: pretty;
+	}
+
+	.section-head { text-align: center; margin-bottom: 64px; }
+
+	/* ==========================================================
+	   Botões
+	   ========================================================== */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 14px 28px;
+		font-family: var(--font-sans);
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		border-radius: var(--radius);
+		transition: all var(--t-base) var(--ease-out);
+		white-space: nowrap;
+	}
+	.btn-primary {
+		color: var(--gold-fg);
+		background: var(--gold);
+		box-shadow: var(--glow-gold);
+	}
+	.btn-primary:hover {
+		filter: brightness(1.1);
+		box-shadow: var(--glow-gold-strong);
+		transform: translateY(-1px);
+	}
+	.btn-outline {
+		color: var(--fg);
+		background: transparent;
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+	}
+	.btn-outline:hover {
+		background: oklch(0.78 0.14 85 / 0.1);
+		border-color: oklch(0.78 0.14 85 / 0.5);
+	}
+	.btn-discord {
+		color: var(--fg);
+		background: var(--discord);
+		box-shadow: 0 0 30px rgba(88, 101, 242, 0.3);
+	}
+	.btn-discord:hover { background: #4752C4; }
+
+	.btn-sm { padding: 10px 18px; font-size: 11px; }
+
+	/* ==========================================================
+	   NAVBAR
+	   ========================================================== */
+	.navbar {
+		position: fixed;
+		top: 0; left: 0; right: 0;
+		z-index: 50;
+		background: transparent;
+		transition: background var(--t-base) var(--ease-out),
+		            backdrop-filter var(--t-base) var(--ease-out),
+		            border-color var(--t-base) var(--ease-out),
+		            box-shadow var(--t-base) var(--ease-out);
+		border-bottom: 1px solid transparent;
+	}
+	.navbar.scrolled {
+		background: oklch(0.1 0.005 280 / 0.8);
+		backdrop-filter: blur(20px) saturate(140%);
+		-webkit-backdrop-filter: blur(20px) saturate(140%);
+		border-bottom-color: oklch(0.78 0.14 85 / 0.2);
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+	}
+	.nav-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 64px;
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 0 16px;
+	}
+	@media (min-width: 640px) { .nav-inner { padding: 0 24px; } }
+	@media (min-width: 1024px) { .nav-inner { padding: 0 32px; } }
+
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-shrink: 0;
+	}
+	.brand-mark {
+		width: 40px; height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: var(--font-cinzel);
+		font-weight: 700;
+		font-size: 18px;
+		color: var(--gold);
+		background: oklch(0.78 0.14 85 / 0.1);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		border-radius: var(--radius);
+	}
+	.brand-text {
+		font-family: var(--font-cinzel);
+		font-weight: 700;
+		font-size: 20px;
+		letter-spacing: 0.1em;
+		color: var(--fg);
+	}
+	@media (max-width: 639px) { .brand-text { display: none; } }
+
+	.nav-links {
+		display: none;
+		align-items: center;
+		gap: 4px;
+	}
+	@media (min-width: 1024px) { .nav-links { display: flex; } }
+
+	.nav-link {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 8px 12px;
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--fg-muted);
+		transition: color var(--t-fast) var(--ease-out);
+	}
+	.nav-link:hover { color: var(--fg); }
+	.nav-link::after {
+		content: "";
+		position: absolute;
+		left: 12px; right: 12px; bottom: 4px;
+		height: 1px;
+		background: var(--gold);
+		transform: scaleX(0);
+		transition: transform var(--t-base) var(--ease-out);
+	}
+	.nav-link:hover::after { transform: scaleX(1); }
+
+	.nav-cta {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+	.nav-cta .btn-install {
+		display: none;
+		animation: pulse-glow 3s ease-in-out infinite;
+	}
+	@media (min-width: 640px) { .nav-cta .btn-login, .nav-cta .btn-install { display: inline-flex; } }
+	@media (max-width: 639px) { .nav-cta .btn-login { display: none; } }
+
+	.hamburger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px; height: 40px;
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--border);
+		color: var(--fg);
+	}
+	@media (min-width: 1024px) { .hamburger { display: none; } }
+
+	.mobile-menu {
+		display: none;
+		border-top: 1px solid var(--border);
+		background: oklch(0.1 0.005 280 / 0.95);
+		backdrop-filter: blur(20px) saturate(140%);
+		-webkit-backdrop-filter: blur(20px) saturate(140%);
+	}
+	.mobile-menu.open { display: block; }
+	.mobile-menu-inner {
+		padding: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+	.mobile-menu .nav-link {
+		padding: 12px;
+		font-size: 13px;
+		letter-spacing: 0.1em;
+		color: var(--fg-muted);
+		border-radius: var(--radius);
+	}
+	.mobile-menu .nav-link i { color: var(--gold); width: 18px; text-align: center; }
+	.mobile-menu .nav-link:hover { background: var(--bg-secondary); color: var(--fg); }
+	.mobile-menu .nav-link::after { display: none; }
+	.mobile-cta {
+		display: flex;
+		gap: 8px;
+		margin-top: 12px;
+		padding-top: 12px;
+		border-top: 1px solid var(--border);
+	}
+	.mobile-cta .btn { flex: 1; }
+
+	/* ==========================================================
+	   HERO
+	   ========================================================== */
+	.hero {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		padding-top: 64px;
+	}
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+	.hero-bg video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 25%;
+	}
+	.hero-overlay-top {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, oklch(0.1 0.005 280 / 0.2) 0%, oklch(0.1 0.005 280 / 0.6) 50%, var(--bg) 100%);
+		z-index: 1;
+	}
+	.hero-overlay-side {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, oklch(0.1 0.005 280 / 0.8) 0%, transparent 60%);
+		z-index: 1;
+	}
+	.hero-bottom-fade {
+		position: absolute;
+		bottom: 0; left: 0; right: 0;
+		height: 128px;
+		background: linear-gradient(180deg, transparent, var(--bg));
+		z-index: 2;
+	}
+	.hero-content {
+		position: relative;
+		z-index: 5;
+		width: 100%;
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 96px 16px;
+	}
+	@media (min-width: 640px) { .hero-content { padding: 96px 24px; } }
+	@media (min-width: 1024px) { .hero-content { padding: 128px 32px; } }
+
+	.hero-grid {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 48px;
+		text-align: center;
+	}
+	@media (min-width: 1024px) {
+		.hero-grid { flex-direction: row; gap: 64px; text-align: left; }
+	}
+	.hero-text { flex: 1; display: flex; flex-direction: column; align-items: center; }
+	@media (min-width: 1024px) { .hero-text { align-items: flex-start; } }
+
+	.hero-eyebrow { animation: fade-up 0.6s var(--ease-out) both; }
+	.hero-title {
+		margin-top: 18px;
+		font-family: var(--font-cinzel);
+		font-size: clamp(48px, 8vw, 80px);
+		font-weight: 900;
+		line-height: 0.95;
+		letter-spacing: 0.02em;
+		background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+		background-size: 200% 100%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: fade-up 0.7s var(--ease-out) 0.1s both, shimmer 4s linear infinite;
+	}
+	.hero-subtitle {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-top: 8px;
+		font-size: clamp(18px, 2.5vw, 24px);
+		font-weight: 700;
+		color: oklch(0.95 0.01 90 / 0.9);
+		animation: fade-up 0.7s var(--ease-out) 0.2s both;
+	}
+	.hero-subtitle::before {
+		content: "";
+		display: inline-block;
+		width: 48px; height: 2px;
+		background: linear-gradient(90deg, var(--gold), transparent);
+	}
+	.hero-desc {
+		margin-top: 24px;
+		max-width: 540px;
+		color: var(--fg-muted);
+		font-size: 16px;
+		line-height: 1.7;
+		text-wrap: pretty;
+		animation: fade-up 0.7s var(--ease-out) 0.3s both;
+	}
+	.hero-badges {
+		margin-top: 32px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		justify-content: center;
+		animation: fade-up 0.7s var(--ease-out) 0.4s both;
+	}
+	@media (min-width: 1024px) { .hero-badges { justify-content: flex-start; } }
+	.hero-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 7px 14px;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: oklch(0.95 0.01 90 / 0.9);
+		background: var(--surface-glass);
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		border-radius: 999px;
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+	.hero-badge i { color: var(--gold); font-size: 12px; }
+	.hero-cta {
+		margin-top: 32px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		justify-content: center;
+		animation: fade-up 0.7s var(--ease-out) 0.5s both;
+	}
+	@media (min-width: 1024px) { .hero-cta { justify-content: flex-start; } }
+
+	/* Server orbs */
+	.hero-orbs {
+		display: flex;
+		gap: 32px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.orb {
+		position: relative;
+		width: 180px; height: 180px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		animation: fade-up 0.7s var(--ease-out) 0.4s both;
+	}
+	.orb-ring {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		animation: spin-slow 12s linear infinite;
+	}
+	.orb-ring.dashed {
+		inset: 8px;
+		border-style: dashed;
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		animation: spin-slow-reverse 18s linear infinite;
+	}
+	.orb-static {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		border: 1px solid oklch(0.95 0.01 90 / 0.1);
+	}
+	.orb-static.inner {
+		inset: 16px;
+		border-color: oklch(0.95 0.01 90 / 0.05);
+	}
+	.orb-card {
+		position: relative;
+		width: 128px; height: 128px;
+		border-radius: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 16px;
+		text-align: center;
+		backdrop-filter: blur(20px) saturate(140%);
+		-webkit-backdrop-filter: blur(20px) saturate(140%);
+		overflow: hidden;
+	}
+	.orb-main .orb-card {
+		background: var(--surface-glass-strong);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+	}
+	.orb-main .orb-card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle at 50% 0%, oklch(0.78 0.14 85 / 0.15), transparent 60%);
+		pointer-events: none;
+	}
+	.orb-secondary .orb-card {
+		background: var(--surface-glass);
+		border: 1px solid var(--border);
+		opacity: 0.75;
+	}
+	.orb-rate {
+		font-family: var(--font-cinzel);
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 4px;
+		position: relative;
+		z-index: 1;
+	}
+	.orb-main .orb-rate {
+		background: linear-gradient(180deg, var(--gold-light), var(--gold-dark));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.orb-secondary .orb-rate { color: oklch(0.95 0.01 90 / 0.7); }
+	.orb-sub {
+		font-size: 9px;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: oklch(0.95 0.01 90 / 0.6);
+		margin-bottom: 8px;
+		position: relative;
+		z-index: 1;
+	}
+	.orb-status {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 4px 10px;
+		font-size: 9px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		border-radius: 999px;
+		border: 1px solid transparent;
+		position: relative;
+		z-index: 1;
+	}
+	.orb-status.online {
+		color: oklch(0.7 0.18 155);
+		background: oklch(0.7 0.18 155 / 0.2);
+		border-color: oklch(0.7 0.18 155 / 0.3);
+	}
+	.orb-status.offline {
+		color: oklch(0.65 0.22 25);
+		background: oklch(0.65 0.22 25 / 0.2);
+		border-color: oklch(0.65 0.22 25 / 0.3);
+	}
+	.dot {
+		width: 6px; height: 6px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.dot.online {
+		background: oklch(0.7 0.18 155);
+		box-shadow: 0 0 8px oklch(0.7 0.18 155 / 0.6);
+		animation: pulse-dot 2s ease-in-out infinite;
+	}
+	.dot.offline { background: oklch(0.65 0.22 25); }
+
+	/* ==========================================================
+	   FEATURES
+	   ========================================================== */
+	.section {
+		position: relative;
+		padding: 96px 0;
+		overflow: hidden;
+	}
+	.section-bg-top    { background: radial-gradient(ellipse at top,    oklch(0.78 0.14 85 / 0.04), transparent 60%); position: absolute; inset: 0; pointer-events: none; }
+	.section-bg-center { background: radial-gradient(ellipse at center, oklch(0.78 0.14 85 / 0.03), transparent 70%); position: absolute; inset: 0; pointer-events: none; }
+	.section-bg-bottom { background: radial-gradient(ellipse at bottom, oklch(0.78 0.14 85 / 0.03), transparent 60%); position: absolute; inset: 0; pointer-events: none; }
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	@media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+
+	.feature {
+		position: relative;
+		padding: 24px;
+		border-radius: var(--radius-lg);
+		background: oklch(0.14 0.005 280 / 0.5);
+		border: 1px solid var(--border);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		transition: all var(--t-base) var(--ease-out);
+		overflow: hidden;
+	}
+	.feature::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: var(--radius-lg);
+		background: radial-gradient(circle at 50% 0%, oklch(0.78 0.14 85 / 0.06), transparent 50%);
+		opacity: 0;
+		transition: opacity var(--t-base) var(--ease-out);
+		pointer-events: none;
+	}
+	.feature:hover {
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		box-shadow: var(--glow-gold);
+	}
+	.feature:hover::before { opacity: 1; }
+	.feature-icon {
+		position: relative;
+		width: 40px; height: 40px;
+		border-radius: var(--radius-sm);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: oklch(0.78 0.14 85 / 0.1);
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		color: var(--gold);
+		font-size: 18px;
+		margin-bottom: 16px;
+		transition: background var(--t-base) var(--ease-out);
+	}
+	.feature:hover .feature-icon { background: oklch(0.78 0.14 85 / 0.2); }
+	.feature h3 {
+		position: relative;
+		font-family: var(--font-sans);
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--fg);
+		margin-bottom: 8px;
+	}
+	.feature p {
+		position: relative;
+		font-size: 14px;
+		color: var(--fg-muted);
+		line-height: 1.7;
+	}
+
+	.features-cta { text-align: center; margin-top: 48px; }
+
+	/* ==========================================================
+	   COMMUNITY (videos)
+	   ========================================================== */
+	.videos-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	@media (min-width: 640px)  { .videos-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .videos-grid { grid-template-columns: repeat(3, 1fr); } }
+	@media (min-width: 1280px) { .videos-grid { grid-template-columns: repeat(4, 1fr); } }
+
+	.video-card {
+		position: relative;
+		display: block;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid var(--border);
+		transition: all var(--t-base) var(--ease-out);
+		aspect-ratio: 16/9;
+		background: var(--bg-secondary);
+	}
+	.video-card:hover {
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		box-shadow: var(--glow-gold);
+	}
+	.video-card img {
+		width: 100%; height: 100%;
+		object-fit: cover;
+		transition: transform 500ms var(--ease-out);
+	}
+	.video-card:hover img { transform: scale(1.05); }
+	.video-card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
+		opacity: 0;
+		transition: opacity var(--t-base) var(--ease-out);
+		z-index: 1;
+	}
+	.video-card:hover::before { opacity: 1; }
+	.video-play {
+		position: absolute;
+		top: 50%; left: 50%;
+		width: 56px; height: 56px;
+		margin: -28px 0 0 -28px;
+		border-radius: 50%;
+		background: var(--gold);
+		color: var(--gold-fg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 20px;
+		padding-left: 4px;
+		transform: scale(0);
+		transition: transform var(--t-base) var(--ease-out);
+		box-shadow: var(--glow-gold-strong);
+		z-index: 2;
+	}
+	.video-card:hover .video-play { transform: scale(1); }
+	.video-ext {
+		position: absolute;
+		top: 10px; right: 10px;
+		color: oklch(0.95 0.01 90 / 0.8);
+		font-size: 14px;
+		opacity: 0;
+		transition: opacity var(--t-base) var(--ease-out);
+		z-index: 2;
+	}
+	.video-card:hover .video-ext { opacity: 1; }
+
+	.videos-cta { text-align: center; margin-top: 40px; }
+
+	/* ==========================================================
+	   CONTENT CREATOR
+	   ========================================================== */
+	.creator { background: oklch(0.18 0.005 280 / 0.5); }
+	.creator-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 48px;
+		align-items: center;
+	}
+	@media (min-width: 1024px) {
+		.creator-grid { flex-direction: row; gap: 64px; }
+	}
+	.creator-text { flex: 1; }
+	.creator-text h2 { text-align: left; }
+	.creator-text p {
+		color: var(--fg-muted);
+		line-height: 1.7;
+		margin-bottom: 16px;
+		text-wrap: pretty;
+	}
+	.creator-stats {
+		display: flex;
+		gap: 24px;
+		margin: 32px 0;
+	}
+	.creator-stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
+	}
+	.creator-stat-icon {
+		width: 40px; height: 40px;
+		border-radius: var(--radius-sm);
+		background: oklch(0.78 0.14 85 / 0.1);
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		color: var(--gold);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 16px;
+	}
+	.creator-stat-value {
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--fg);
+	}
+	.creator-stat-label {
+		font-size: 10px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--fg-muted);
+	}
+	.creator-visual {
+		flex: 1;
+		position: relative;
+		aspect-ratio: 16/9;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid oklch(0.78 0.14 85 / 0.2);
+		box-shadow: var(--glow-gold);
+		width: 100%;
+	}
+	.creator-visual video,
+	.creator-visual img {
+		width: 100%; height: 100%;
+		object-fit: cover;
+	}
+	.creator-visual::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, transparent 50%, oklch(0.1 0.005 280 / 0.8));
+	}
+	.creator-visual-cap {
+		position: absolute;
+		bottom: 16px; left: 16px; right: 16px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		z-index: 1;
+	}
+	.creator-visual-cap-icon {
+		width: 32px; height: 32px;
+		border-radius: 50%;
+		background: oklch(0.78 0.14 85 / 0.2);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		color: var(--gold);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+	}
+	.creator-visual-cap p:first-child { font-size: 13px; font-weight: 600; color: var(--fg); }
+	.creator-visual-cap p:last-child { font-size: 10px; color: var(--fg-muted); }
+
+	/* ==========================================================
+	   WIKI cards
+	   ========================================================== */
+	.wiki-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+	@media (min-width: 640px)  { .wiki-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .wiki-grid { grid-template-columns: repeat(4, 1fr); } }
+
+	.wiki-card {
+		position: relative;
+		display: block;
+		aspect-ratio: 3/4;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid var(--border);
+		transition: all var(--t-base) var(--ease-out);
+	}
+	.wiki-card:hover {
+		border-color: oklch(0.78 0.14 85 / 0.3);
+		box-shadow: var(--glow-gold);
+		transform: translateY(-4px);
+	}
+	.wiki-card img {
+		width: 100%; height: 100%;
+		object-fit: cover;
+		transition: transform 700ms var(--ease-out);
+	}
+	.wiki-card:hover img { transform: scale(1.05); }
+	.wiki-card::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, transparent 30%, oklch(0.1 0.005 280 / 0.6) 60%, var(--bg) 100%);
+	}
+	.wiki-info {
+		position: absolute;
+		left: 20px; right: 20px; bottom: 20px;
+		z-index: 1;
+	}
+	.wiki-info-icon {
+		width: 36px; height: 36px;
+		border-radius: var(--radius-sm);
+		background: oklch(0.78 0.14 85 / 0.2);
+		border: 1px solid oklch(0.78 0.14 85 / 0.3);
+		color: var(--gold);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		margin-bottom: 12px;
+		transition: background var(--t-base) var(--ease-out);
+	}
+	.wiki-card:hover .wiki-info-icon { background: oklch(0.78 0.14 85 / 0.3); }
+	.wiki-info h3 {
+		font-family: var(--font-sans);
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--fg);
+		margin-bottom: 4px;
+	}
+	.wiki-info p {
+		font-size: 11px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--fg-muted);
+	}
+
+	/* ==========================================================
+	   DISCORD CTA
+	   ========================================================== */
+	.discord-cta-section {
+		position: relative;
+		padding: 80px 0;
+		overflow: hidden;
+	}
+	.discord-cta-section::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(ellipse at center, rgba(88, 101, 242, 0.1), transparent 60%);
+		pointer-events: none;
+	}
+	.discord-cta-inner {
+		position: relative;
+		max-width: 720px;
+		margin: 0 auto;
+		text-align: center;
+		padding: 0 16px;
+	}
+	.discord-icon {
+		width: 64px; height: 64px;
+		border-radius: var(--radius-xl);
+		background: rgba(88, 101, 242, 0.1);
+		border: 1px solid rgba(88, 101, 242, 0.3);
+		color: var(--discord);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 24px;
+		font-size: 28px;
+	}
+	.discord-meta {
+		margin-top: 24px;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 16px;
+		border-radius: 999px;
+		background: var(--surface-glass);
+		border: 1px solid rgba(88, 101, 242, 0.2);
+		color: var(--fg);
+		font-size: 13px;
+	}
+	.discord-meta i { color: var(--fg-muted); }
+	.discord-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		justify-content: center;
+		align-items: center;
+		margin-top: 32px;
+	}
+
+	/* ==========================================================
+	   FOOTER
+	   ========================================================== */
+	footer {
+		position: relative;
+		border-top: 1px solid var(--border);
+		background: oklch(0.14 0.005 280 / 0.5);
+	}
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px;
+		padding: 64px 0;
+	}
+	@media (min-width: 640px)  { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(4, 1fr); gap: 32px; } }
+
+	.footer-brand .brand { margin-bottom: 16px; }
+	.footer-brand p {
+		font-size: 14px;
+		color: var(--fg-muted);
+		line-height: 1.7;
+		margin-bottom: 16px;
+	}
+	.footer-socials {
+		display: flex;
+		gap: 8px;
+	}
+	.footer-social {
+		width: 36px; height: 36px;
+		border-radius: var(--radius-sm);
+		background: var(--bg-secondary);
+		border: 1px solid var(--border);
+		color: var(--fg-muted);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		transition: all var(--t-fast) var(--ease-out);
+	}
+	.footer-social:hover {
+		color: var(--gold);
+		border-color: oklch(0.78 0.14 85 / 0.3);
+	}
+
+	.footer-col h4 {
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		color: var(--fg);
+		margin-bottom: 16px;
+	}
+	.footer-col li { margin-bottom: 10px; }
+	.footer-col a {
+		font-size: 14px;
+		color: var(--fg-muted);
+		transition: color var(--t-fast) var(--ease-out);
+	}
+	.footer-col a:hover { color: var(--gold); }
+
+	.footer-bottom {
+		padding: 24px 0;
+		border-top: 1px solid var(--border);
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		align-items: center;
+		justify-content: space-between;
+	}
+	@media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
+	.footer-bottom p {
+		font-size: 12px;
+		color: var(--fg-muted);
+	}
+
+	/* ==========================================================
+	   Discord floating button
+	   ========================================================== */
+	.discord-float {
+		position: fixed;
+		bottom: 24px; right: 24px;
+		z-index: 40;
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 12px 18px;
+		border-radius: 999px;
+		color: var(--fg);
+		background: var(--surface-glass-strong);
+		border: 1px solid rgba(88, 101, 242, 0.5);
+		backdrop-filter: blur(12px) saturate(140%);
+		-webkit-backdrop-filter: blur(12px) saturate(140%);
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+		font-size: 13px;
+		font-weight: 600;
+		transition: all var(--t-base) var(--ease-out);
+	}
+	.discord-float:hover {
+		border-color: rgba(88, 101, 242, 0.9);
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 24px rgba(88, 101, 242, 0.35);
+		transform: translateY(-2px);
+	}
+	.discord-float i { color: var(--discord); font-size: 18px; }
+	@media (max-width: 480px) {
+		.discord-float span { display: none; }
+		.discord-float { padding: 14px; }
+	}
+
+	</style>
+</head>
+<body>
+
+<!-- GTM no-script -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJHJZSGB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ========================================================
+     NAVBAR
+     ======================================================== -->
+<nav class="navbar" id="navbar">
+	<div class="nav-inner">
+		<a href="#" class="brand">
+			<div class="brand-mark">A</div>
+			<span class="brand-text">AMERIKA</span>
+		</a>
+
+		<div class="nav-links">
+			<a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=news&id=1"><i class="fas fa-newspaper"></i> News</a>
+			<a class="nav-link" href="#features"><i class="fas fa-book"></i> Info</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=download"><i class="fas fa-download"></i> Downloads</a>
+			<a class="nav-link" href="https://www.l2amerika.com/signup"><i class="fas fa-user-plus"></i> Register</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=rankings"><i class="fas fa-trophy"></i> Rankings</a>
+		</div>
+
+		<div class="nav-cta">
+			<a href="https://www.l2amerika.com/signin" class="btn btn-outline btn-sm btn-login"><i class="fas fa-user"></i> Login</a>
+			<a href="https://www.l2amerika.com/Amerika_Installer.exe" class="btn btn-primary btn-sm btn-install"><i class="fab fa-windows"></i> Instalar</a>
+			<button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+				<i class="fas fa-bars" id="hamburger-icon"></i>
+			</button>
+		</div>
+	</div>
+
+	<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-inner">
+			<a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=news&id=1"><i class="fas fa-newspaper"></i> News</a>
+			<a class="nav-link" href="#features"><i class="fas fa-book"></i> Info</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=download"><i class="fas fa-download"></i> Downloads</a>
+			<a class="nav-link" href="https://www.l2amerika.com/signup"><i class="fas fa-user-plus"></i> Register</a>
+			<a class="nav-link" href="https://www.l2amerika.com/?page=rankings"><i class="fas fa-trophy"></i> Rankings</a>
+			<div class="mobile-cta">
+				<a href="https://www.l2amerika.com/signin" class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Login</a>
+				<a href="https://www.l2amerika.com/Amerika_Installer.exe" class="btn btn-primary btn-sm"><i class="fab fa-windows"></i> Instalar</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<!-- ========================================================
+     HERO
+     ======================================================== -->
+<section class="hero">
+	<div class="hero-bg">
+		<video autoplay loop muted playsinline>
+			<source src="https://www.l2amerika.com/media/cinematicl2.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="hero-overlay-top"></div>
+	<div class="hero-overlay-side"></div>
+
+	<div class="hero-content">
+		<div class="hero-grid">
+			<div class="hero-text">
+				<span class="eyebrow hero-eyebrow">17 Anos Online</span>
+				<h1 class="hero-title">AMERIKA</h1>
+				<h2 class="hero-subtitle">HIGH FIVE PVP SERVER</h2>
+				<p class="hero-desc">
+					A verdadeira essência do L2 PvP: 17 anos online, sem wipes, eventos automáticos, sieges e Territory Wars.
+					Cace bosses colossais, garanta drops especiais e torne-se a lenda que sempre quis ser.
+				</p>
+				<div class="hero-badges">
+					<span class="hero-badge"><i class="fas fa-shield-alt"></i> 17 Anos Online</span>
+					<span class="hero-badge"><i class="fas fa-ban"></i> Sem Wipes</span>
+					<span class="hero-badge"><i class="fas fa-users"></i> 1813 Players Agora</span>
+				</div>
+				<div class="hero-cta">
+					<a href="https://www.l2amerika.com/signup" class="btn btn-primary"><i class="fas fa-gamepad"></i> Registrar Agora</a>
+					<a href="https://www.l2amerika.com/Amerika_Installer.exe" class="btn btn-outline"><i class="fas fa-download"></i> Download Client</a>
+				</div>
+			</div>
+
+			<div class="hero-orbs">
+				<!-- Orb principal -->
+				<div class="orb orb-main">
+					<div class="orb-ring"></div>
+					<div class="orb-ring dashed"></div>
+					<div class="orb-card">
+						<div class="orb-rate">200x</div>
+						<div class="orb-sub">High Five</div>
+						<span class="orb-status online"><span class="dot online"></span>Online: 1813</span>
+					</div>
+				</div>
+				<!-- Orb secundário -->
+				<div class="orb orb-secondary">
+					<div class="orb-static"></div>
+					<div class="orb-static inner"></div>
+					<div class="orb-card">
+						<div class="orb-rate">BETA</div>
+						<div class="orb-sub">High Five</div>
+						<span class="orb-status offline"><span class="dot offline"></span>Offline</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="hero-bottom-fade"></div>
+</section>
+
+<!-- ========================================================
+     FEATURES
+     ======================================================== -->
+<section class="section" id="features">
+	<div class="section-bg-center"></div>
+	<div class="container" style="position: relative;">
+		<div class="section-head reveal">
+			<span class="eyebrow">Server Features</span>
+			<h2 class="section-title">Conheça o Servidor</h2>
+			<p class="section-sub">
+				Uma biblioteca completa sobre o universo do Amerika Server. Aprofunde seu conhecimento sobre quests,
+				itens e funcionalidades únicas do nosso servidor.
+			</p>
+		</div>
+
+		<div class="features-grid">
+			<article class="feature reveal" data-delay="1">
+				<div class="feature-icon"><i class="fas fa-khanda"></i></div>
+				<h3>PvP Intenso</h3>
+				<p>Batalhas épicas com classes balanceadas, farm facilitado e drops especiais que tornam cada combate único.</p>
+			</article>
+			<article class="feature reveal" data-delay="2">
+				<div class="feature-icon"><i class="fas fa-fire"></i></div>
+				<h3>Eventos Automáticos</h3>
+				<p>Eventos acontecendo 24/7 com recompensas exclusivas. TVT, CTF, Death Match e muito mais.</p>
+			</article>
+			<article class="feature reveal" data-delay="3">
+				<div class="feature-icon"><i class="fas fa-chess-rook"></i></div>
+				<h3>Sieges &amp; TW</h3>
+				<p>Sieges de castelo e Territory Wars semanais com prêmios exclusivos para os clans vencedores.</p>
+			</article>
+			<article class="feature reveal" data-delay="1">
+				<div class="feature-icon"><i class="fas fa-magic"></i></div>
+				<h3>Enchant System</h3>
+				<p>Sistema de enchant balanceado com safe enchant, blessed scrolls e rates especiais para equipamentos.</p>
+			</article>
+			<article class="feature reveal" data-delay="2">
+				<div class="feature-icon"><i class="fas fa-scroll"></i></div>
+				<h3>Custom Features</h3>
+				<p>Interface personalizada, sistema de farm progressivo, NPCs exclusivos e muito mais.</p>
+			</article>
+			<article class="feature reveal" data-delay="3">
+				<div class="feature-icon"><i class="fas fa-skull"></i></div>
+				<h3>Bosses Épicos</h3>
+				<p>Cace bosses colossais com drops exclusivos. Baium, Antharas, Valakas e muitos outros.</p>
+			</article>
+		</div>
+
+		<div class="features-cta reveal">
+			<a href="https://www.l2amerika.com/?page=info" class="btn btn-primary"><i class="fas fa-scroll"></i> Amerika Wiki</a>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     COMMUNITY VIDEOS
+     ======================================================== -->
+<section class="section" id="community">
+	<div class="section-bg-top"></div>
+	<div class="container" style="position: relative;">
+		<div class="section-head reveal">
+			<span class="eyebrow">Community</span>
+			<h2 class="section-title">Vídeos da Comunidade</h2>
+			<p class="section-sub">Assista os melhores momentos do Amerika criados pelos nossos jogadores!</p>
+		</div>
+
+		<div class="videos-grid">
+			<a class="video-card reveal" data-delay="1" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ES2cd-85zC0">
+				<img src="https://img.youtube.com/vi/ES2cd-85zC0/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="2" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=l1Z1rqK0O2Y">
+				<img src="https://img.youtube.com/vi/l1Z1rqK0O2Y/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="3" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2KSScxPkcRw">
+				<img src="https://img.youtube.com/vi/2KSScxPkcRw/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="4" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=pBvQcApoXoU">
+				<img src="https://img.youtube.com/vi/pBvQcApoXoU/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="1" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=R8ggBUS4t94">
+				<img src="https://img.youtube.com/vi/R8ggBUS4t94/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="2" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=C9iR-ZfX9qI">
+				<img src="https://img.youtube.com/vi/C9iR-ZfX9qI/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="3" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=E1byHP0FgQo">
+				<img src="https://img.youtube.com/vi/E1byHP0FgQo/hqdefault.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+			<a class="video-card reveal" data-delay="4" target="_blank" rel="noopener" href="https://www.l2amerika.com/?page=gallery&t=video">
+				<img src="https://www.l2amerika.com/imgs/gallery/thumbnail/7639882113285770503.jpg" alt="Vídeo da comunidade" loading="lazy" />
+				<div class="video-play"><i class="fas fa-play"></i></div>
+				<div class="video-ext"><i class="fas fa-external-link-alt"></i></div>
+			</a>
+		</div>
+
+		<div class="videos-cta reveal">
+			<a href="https://www.l2amerika.com/?page=gallery&t=video" class="btn btn-outline"><i class="fas fa-video"></i> Ver todos os vídeos</a>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     CONTENT CREATOR
+     ======================================================== -->
+<section class="section creator">
+	<div class="container" style="position: relative;">
+		<div class="creator-grid">
+			<div class="creator-text reveal">
+				<span class="eyebrow">Content Creators</span>
+				<h2 class="section-title" style="text-align: left;">Crie conteúdo e seja recompensado!</h2>
+				<p>
+					No Amerika Server, valorizamos a criação de conteúdo para plataformas populares como YouTube, TikTok e Twitch.
+					Acreditamos que o conteúdo gerado pelos jogadores fortalece nossa comunidade.
+				</p>
+				<p>
+					Quando você cria conteúdo para o Amerika, não apenas ajuda a expandir nossa comunidade,
+					mas também recebe recompensas por isso! Queremos incentivar sua criatividade oferecendo benefícios tangíveis.
+				</p>
+
+				<div class="creator-stats">
+					<div class="creator-stat">
+						<div class="creator-stat-icon"><i class="fab fa-youtube"></i></div>
+						<span class="creator-stat-value">150+</span>
+						<span class="creator-stat-label">YouTube</span>
+					</div>
+					<div class="creator-stat">
+						<div class="creator-stat-icon"><i class="fab fa-tiktok"></i></div>
+						<span class="creator-stat-value">300+</span>
+						<span class="creator-stat-label">TikTok</span>
+					</div>
+					<div class="creator-stat">
+						<div class="creator-stat-icon"><i class="fas fa-trophy"></i></div>
+						<span class="creator-stat-value">50+</span>
+						<span class="creator-stat-label">Prêmios</span>
+					</div>
+				</div>
+
+				<a href="https://www.l2amerika.com/signin" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Vídeos</a>
+			</div>
+
+			<div class="creator-visual reveal" data-delay="2">
+				<video autoplay loop muted playsinline>
+					<source src="https://www.l2amerika.com/video/gameplay.webm" type="video/webm">
+					<source src="https://www.l2amerika.com/video/gameplay.mp4" type="video/mp4">
+				</video>
+				<div class="creator-visual-cap">
+					<div class="creator-visual-cap-icon"><i class="fas fa-play"></i></div>
+					<div>
+						<p>Amerika Gameplay</p>
+						<p>Criado pela comunidade</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     WIKI
+     ======================================================== -->
+<section class="section">
+	<div class="section-bg-bottom"></div>
+	<div class="container" style="position: relative;">
+		<div class="section-head reveal">
+			<span class="eyebrow">Wiki</span>
+			<h2 class="section-title">Saiba Mais Sobre o Servidor</h2>
+			<p class="section-sub">
+				Uma biblioteca completa sobre o universo do Amerika. Cada quest, item e funcionalidade está documentada,
+				dando a você a confiança necessária para avançar na sua aventura.
+			</p>
+		</div>
+
+		<div class="wiki-grid">
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="1">
+				<img src="https://www.l2amerika.com/images/image_bt1.jpg" alt="Sobre o Servidor" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-khanda"></i></div>
+					<h3>Sobre o Servidor</h3>
+					<p>Como começar?</p>
+				</div>
+			</a>
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="2">
+				<img src="https://www.l2amerika.com/images/image_bt2.jpg" alt="Enchants" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-magic"></i></div>
+					<h3>Enchants</h3>
+					<p>Upgrade de equipamentos</p>
+				</div>
+			</a>
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="3">
+				<img src="https://www.l2amerika.com/images/image_interface.png" alt="Nova Interface" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-desktop"></i></div>
+					<h3>Nova Interface</h3>
+					<p>Veja como funciona!</p>
+				</div>
+			</a>
+			<a href="https://www.l2amerika.com/?page=info" class="wiki-card reveal" data-delay="4">
+				<img src="https://www.l2amerika.com/images/farming.jpg" alt="Farming" loading="lazy" />
+				<div class="wiki-info">
+					<div class="wiki-info-icon"><i class="fas fa-wheat-awn"></i></div>
+					<h3>Farming</h3>
+					<p>Explore as Zonas</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     DISCORD CTA
+     ======================================================== -->
+<section class="discord-cta-section">
+	<div class="discord-cta-inner reveal">
+		<div class="discord-icon"><i class="fab fa-discord"></i></div>
+		<h2 class="section-title">Junte-se à Nossa Comunidade</h2>
+		<p class="section-sub">
+			Conecte-se com milhares de jogadores no nosso Discord. Encontre grupos, acompanhe novidades e participe de eventos exclusivos.
+		</p>
+		<div class="discord-actions">
+			<a href="https://discord.com/invite/vAWtEFt2hx" target="_blank" rel="noopener" class="btn btn-discord">
+				<i class="fab fa-discord"></i> Entrar no Discord
+			</a>
+			<div class="discord-meta">
+				<span class="dot online" style="width:8px; height:8px;"></span>
+				<i class="fas fa-users"></i>
+				<span>2.4k+ online</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
+<footer>
+	<div class="container">
+		<div class="footer-grid">
+			<div class="footer-brand">
+				<a href="#" class="brand">
+					<div class="brand-mark">A</div>
+					<span class="brand-text">AMERIKA</span>
+				</a>
+				<p>O servidor PvP High Five mais respeitado. 17 anos online, sem wipes, com a melhor experiência de L2 PvP.</p>
+				<div class="footer-socials">
+					<a class="footer-social" href="https://discord.com/invite/vAWtEFt2hx" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
+					<a class="footer-social" href="https://facebook.com/Lineage2Amerika" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+					<a class="footer-social" href="https://www.youtube.com/@AmerikaL2" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+				</div>
+			</div>
+
+			<div class="footer-col">
+				<h4>Servidor</h4>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="https://www.l2amerika.com/?page=news&id=1">News</a></li>
+					<li><a href="https://www.l2amerika.com/?page=download">Downloads</a></li>
+					<li><a href="https://www.l2amerika.com/?page=rankings">Rankings</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Comunidade</h4>
+				<ul>
+					<li><a href="https://discord.com/invite/vAWtEFt2hx" target="_blank" rel="noopener">Discord</a></li>
+					<li><a href="https://facebook.com/Lineage2Amerika" target="_blank" rel="noopener">Facebook</a></li>
+					<li><a href="https://www.youtube.com/@AmerikaL2" target="_blank" rel="noopener">YouTube</a></li>
+					<li><a href="https://www.l2amerika.com/?page=gallery">Galeria</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Suporte</h4>
+				<ul>
+					<li><a href="https://www.l2amerika.com/?page=info">Server Wiki</a></li>
+					<li><a href="https://www.l2amerika.com/?page=bug_policy">Bug Policy</a></li>
+					<li><a href="https://www.l2amerika.com/?page=boss-status">Boss Status</a></li>
+					<li><a href="https://www.l2amerika.com/?page=castle-siege">Castle Siege</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>&copy; 2008 - 2026 Amerika Server. Todos os direitos reservados.</p>
+			<p>Lineage 2 e marcas associadas são propriedade da NCSoft Corporation.</p>
+		</div>
+	</div>
+</footer>
+
+<!-- Discord float -->
+<a href="https://discord.gg/vAWtEFt2hx" target="_blank" rel="noopener" class="discord-float" title="Entre no nosso Discord!">
+	<i class="fab fa-discord"></i><span>Join our Discord</span>
+</a>
+
+<script>
+(function () {
+	// Navbar — scroll blur
+	var navbar = document.getElementById('navbar');
+	var navTicking = false;
+	function updateNav() {
+		if (window.scrollY > 20) navbar.classList.add('scrolled');
+		else navbar.classList.remove('scrolled');
+		navTicking = false;
+	}
+	window.addEventListener('scroll', function () {
+		if (!navTicking) { window.requestAnimationFrame(updateNav); navTicking = true; }
+	}, { passive: true });
+	updateNav();
+
+	// Mobile menu toggle
+	var hamburger = document.getElementById('hamburger');
+	var mobile    = document.getElementById('mobile-menu');
+	var iconEl    = document.getElementById('hamburger-icon');
+	var open = false;
+	hamburger.addEventListener('click', function () {
+		open = !open;
+		mobile.classList.toggle('open', open);
+		iconEl.className = open ? 'fas fa-times' : 'fas fa-bars';
+		hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+	});
+	// Fecha mobile menu ao clicar em link
+	mobile.querySelectorAll('.nav-link, .btn').forEach(function (el) {
+		el.addEventListener('click', function () {
+			open = false;
+			mobile.classList.remove('open');
+			iconEl.className = 'fas fa-bars';
+			hamburger.setAttribute('aria-expanded', 'false');
+		});
+	});
+
+	// Scroll reveal
+	if ('IntersectionObserver' in window) {
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('in');
+					io.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+		document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+	} else {
+		document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+	}
+})();
+</script>
+
+</body>
+</html>
