@@ -22,12 +22,363 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" type="41571b0876b926749b20ef17-text/javascript"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" type="41571b0876b926749b20ef17-text/javascript"></script>
 
 		<style>
+		/* ===== INFO PAGE MODERNIZATION ===== */
+		:root {
+			--mk-gold: #d4af37;
+			--mk-gold-bright: #f2ca50;
+			--mk-text: #f5ecd2;
+			--mk-muted: rgba(245,236,210,0.78);
+			--mk-border: rgba(212,175,55,0.18);
+			--mk-green: #4ade80;
+			--mk-orange: #f97316;
+			--mk-red: #ef4444;
+			--mk-blue: #60a5fa;
+			--mk-gray: #d3d3d3;
+		}
+		@keyframes mkShimmer {
+			0%   { background-position: 100% 50%; }
+			100% { background-position: 0% 50%; }
+		}
+
+		/* ── Page wrapper ── */
+		.topContentInfos {
+			background-image: url(https://www.l2amerika.com/images/background-4-bk.jpg);
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: cover;
+			min-height: 100vh;
+			padding-bottom: 60px;
+		}
+
+		/* Full article width */
+		.topContentInfos > .container {
+			max-width: 100% !important;
+			padding-left: 24px !important;
+			padding-right: 24px !important;
+		}
+
+		/* ── Header card ── */
+		.boxInfos {
+			background: rgba(14,11,7,0.93) !important;
+			border: 1px solid var(--mk-border) !important;
+			border-radius: 16px !important;
+			box-shadow: 0 4px 40px rgba(0,0,0,0.55) !important;
+			overflow: visible !important;
+		}
+
+		/* SERVER WIKI title */
+		.title-container .title {
+			font-family: 'Cinzel', serif !important;
+			font-weight: 800 !important;
+			font-size: clamp(18px, 2.5vw, 28px) !important;
+			letter-spacing: 0.06em !important;
+			line-height: 1.1 !important;
+			color: var(--mk-gold-bright) !important;
+			-webkit-text-fill-color: var(--mk-gold-bright) !important;
+			background: none !important;
+		}
+		.title-container .subtitle {
+			font-family: 'Space Grotesk', sans-serif !important;
+			font-size: 12px !important;
+			color: var(--mk-muted) !important;
+			margin-top: 4px !important;
+		}
+
+		/* ── Tabs ── */
+		ul.nav.nav-tabs {
+			gap: 4px !important;
+			padding: 0 !important;
+			margin-left: 0 !important;
+			border-bottom: 1px solid var(--mk-border) !important;
+		}
+		.nav-tabs .nav-item { margin-bottom: 0 !important; }
+		.nav-tabs a.nav-link {
+			font-family: 'Space Grotesk', sans-serif !important;
+			font-size: 11px !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.09em !important;
+			text-transform: uppercase !important;
+			color: var(--mk-muted) !important;
+			background: rgba(255,255,255,0.03) !important;
+			border: 1px solid transparent !important;
+			border-bottom: none !important;
+			border-radius: 6px 6px 0 0 !important;
+			padding: 8px 14px !important;
+			margin-left: 0 !important;
+			transition: color 0.2s, background 0.2s !important;
+		}
+		.nav-tabs a.nav-link:hover {
+			color: var(--mk-gold-bright) !important;
+			background: rgba(212,175,55,0.07) !important;
+		}
+		.nav-tabs a.nav-link.active {
+			color: var(--mk-gold-bright) !important;
+			background: rgba(14,11,7,0.97) !important;
+			border-color: var(--mk-border) var(--mk-border) transparent !important;
+		}
+
+		/* ── Tab content panel ── */
+		.box-container {
+			background: rgba(14,11,7,0.95) !important;
+			border: 1px solid var(--mk-border) !important;
+			border-top: none !important;
+			border-radius: 0 0 12px 12px !important;
+			padding: 36px 40px !important;
+		}
+		.tab-content { padding-top: 24px !important; }
+		.tab-pane > div { padding-top: 0 !important; }
+		/* Espaçamento entre seções consecutivas dentro de cada aba */
+		.container-events > div + div,
+		.container-farms > div + div { margin-top: 28px !important; }
+		.tab-pane .informations-container,
+		.tab-pane .images-container {
+			background: transparent !important;
+			box-shadow: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+
+		/* ── Section titles — solid gold, same as index.html ── */
+		.titleInfos, h2.titleInfos, p.titleInfos,
+		.img-title {
+			font-family: 'Cinzel', serif !important;
+			font-weight: 700 !important;
+			font-size: clamp(13px, 1.4vw, 16px) !important;
+			letter-spacing: 0.04em !important;
+			text-transform: uppercase !important;
+			line-height: 1.2 !important;
+			color: var(--mk-gold-bright) !important;
+			-webkit-text-fill-color: var(--mk-gold-bright) !important;
+			background: none !important;
+			margin-top: 28px !important;
+			margin-bottom: 10px !important;
+			overflow: visible !important;
+		}
+		/* first title in each section shouldn't have top margin */
+		.titleInfos:first-child, h2.titleInfos:first-child, p.titleInfos:first-child,
+		.img-title:first-child {
+			margin-top: 0 !important;
+		}
+
+		/* ── Body text — todas as classes de texto do artigo padronizadas ── */
+		.textInfos, .textInfosLong, .textFarm, .textFarmInfo,
+		.textEventInfo, .textAutoEnchant, .textPolicy,
+		.textDownloads, .img-text, .message-info {
+			font-family: 'Space Grotesk', sans-serif !important;
+			font-size: 14.5px !important;
+			line-height: 1.7 !important;
+			color: var(--mk-muted) !important;
+		}
+
+		/* ── Tables ── */
+		th {
+			font-family: 'Space Grotesk', sans-serif !important;
+			font-size: 11px !important;
+			letter-spacing: 0.08em !important;
+			text-transform: uppercase !important;
+			color: var(--mk-gold) !important;
+			background: rgba(212,175,55,0.08) !important;
+			padding: 8px 12px !important;
+			border-bottom: 1px solid var(--mk-border) !important;
+		}
+		td {
+			padding: 8px 12px !important;
+			border-bottom: 1px solid rgba(212,175,55,0.07) !important;
+			color: var(--mk-muted) !important;
+			font-family: 'Space Grotesk', sans-serif !important;
+			font-size: 14.5px !important;
+			vertical-align: top !important;
+		}
+		tr:last-child td { border-bottom: none !important; }
+		tr:hover td { background: rgba(212,175,55,0.04) !important; }
+
+		/* ── Indicadores de chance — paleta padronizada ── */
+		.chance-high   { color: var(--mk-green) !important; }
+		.chance-medium { color: var(--mk-orange) !important; }
+		.chance-low    { color: var(--mk-red) !important; }
+
+		/* ── Zone / feature cards — todas as variações padronizadas ── */
+		.simple-text-farm-green,
+		.simple-text-farm-orange,
+		.simple-text-farm-red,
+		.simple-text-farm-blue,
+		.simple-text-farm-dark-blue,
+		.simple-text-farm-dark-red,
+		.simple-text,
+		.simple-text-features,
+		.simple-text-interface,
+		.simple-text-gray,
+		.simple-text-features-interface {
+			border-radius: 10px !important;
+			border: 1px solid var(--mk-border) !important;
+			background: rgba(14,11,7,0.93) !important;
+			padding: 20px 24px !important;
+			margin-bottom: 16px !important;
+			position: relative !important;
+			overflow: hidden !important;
+		}
+		.simple-text-farm-green  { border-left: 3px solid var(--mk-green) !important; }
+		.simple-text-farm-orange { border-left: 3px solid var(--mk-orange) !important; }
+		.simple-text-farm-red,
+		.simple-text-farm-dark-red { border-left: 3px solid var(--mk-red) !important; }
+		.simple-text-farm-blue,
+		.simple-text-farm-dark-blue,
+		.simple-text-features,
+		.simple-text-interface,
+		.simple-text-gray,
+		.simple-text-features-interface { border-left: 3px solid var(--mk-blue) !important; }
+
+		/* ── Recursos: image+text cards ── */
+		.flexContainer { display: flex !important; gap: 20px !important; align-items: flex-start !important; }
+		.imageClass,
+		.imageClassInterface,
+		.imageClassInterfaceCfg,
+		.imageClassFeatures {
+			width: 200px !important; min-width: 160px !important;
+			border-radius: 8px !important; border: 1px solid var(--mk-border) !important;
+			object-fit: cover !important; flex-shrink: 0 !important;
+		}
+		.textContainer, .textContainerInterface { flex: 1 !important; min-width: 0 !important; }
+
+		/* ── Event cards ── */
+		.container-events { max-width: 100% !important; }
+		.container-farm-txt-info-tournament,
+		.container-farm-txt-info-event {
+			background: rgba(14,11,7,0.93) !important;
+			border: 1px solid var(--mk-border) !important;
+			border-left: 3px solid var(--mk-gold) !important;
+			border-radius: 10px !important;
+			padding: 20px !important;
+			margin-bottom: 0 !important;
+		}
+
+		/* ── Info banners ── */
+		.message-informations {
+			background: rgba(14,11,7,0.93) !important;
+			border: 1px solid rgba(74,222,128,0.25) !important;
+			border-radius: 8px !important;
+			padding: 16px 20px !important;
+			max-width: 100% !important;
+			margin: 20px 0 !important;
+		}
+		.message-icon { color: var(--mk-green) !important; font-size: 14px !important; margin-right: 10px !important; flex-shrink: 0 !important; }
+		.message-informations.red { border-color: rgba(239,68,68,0.30) !important; }
+		.message-informations.red .message-icon { color: var(--mk-red) !important; }
+
+		/* ── Lindvior drop table wrapper ── */
+		.box-container-infos {
+			background: rgba(14,11,7,0.93) !important;
+			border: 1px solid var(--mk-border) !important;
+			border-radius: 10px !important;
+			padding: 20px !important;
+			margin-top: 20px !important;
+		}
+
+		/* ── Base: herança a partir do container pai ── */
+		.box-container {
+			font-family: 'Space Grotesk', sans-serif;
+			font-size: 14.5px;
+			line-height: 1.7;
+			color: var(--mk-muted);
+		}
+		/* drop table group headers */
+		.box-container strong { font-weight: 600; color: var(--mk-gold-bright); }
+
+		/* ── Mobile ── */
+		@media (max-width: 768px) {
+			.box-container { padding: 18px 16px !important; }
+			.flexContainer { flex-direction: column !important; }
+			.imageClass,
+			.imageClassInterface,
+			.imageClassInterfaceCfg,
+			.imageClassFeatures { width: 100% !important; min-width: unset !important; }
+			.nav-tabs a.nav-link { font-size: 10px !important; padding: 7px 9px !important; }
+			th, td { padding: 6px 8px !important; font-size: 13px !important; }
+
+			/* Aba "Informações Gerais": tabela de rates empilha abaixo dos textos */
+			.tab-pane .flex.flex-row {
+				flex-direction: column-reverse !important;
+				gap: 28px !important;
+			}
+			.tab-pane .flex.flex-row > .container-infos {
+				width: 100% !important;
+				max-width: 100% !important;
+			}
+			.rates-table { width: 100% !important; }
+
+			/* Conter overflow: o flex column dentro de .boxInfos precisa de min-width:0
+			   nos filhos pra que o scroll horizontal das abas não empurre a página */
+			.boxInfos { overflow: hidden !important; }
+			.boxInfos > .flex { min-width: 0 !important; max-width: 100% !important; }
+			.boxInfos > .flex > * { min-width: 0 !important; max-width: 100% !important; }
+
+			/* Strip de abas rola horizontalmente em vez de quebrar */
+			.tabs-container { min-width: 0 !important; max-width: 100% !important; overflow: hidden; }
+			ul.nav.nav-tabs {
+				flex-wrap: nowrap !important;
+				overflow-x: auto !important;
+				overflow-y: hidden !important;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
+				-ms-overflow-style: none;
+				min-width: 0 !important;
+				max-width: 100% !important;
+			}
+			ul.nav.nav-tabs::-webkit-scrollbar { display: none !important; }
+			ul.nav.nav-tabs .nav-item { flex-shrink: 0 !important; }
+			.nav-tabs a.nav-link { white-space: nowrap !important; }
+
+			/* Tabelas não podem estourar o card — quebra apenas palavras longas, nunca char a char */
+			.tab-pane table { max-width: 100% !important; }
+			.tab-pane td, .tab-pane th { overflow-wrap: break-word; word-break: normal !important; }
+
+			/* Banner de info: ícone alinhado ao topo (não centralizado) quando o texto quebra em várias linhas */
+			.message-informations { align-items: flex-start !important; }
+			.message-icon { margin-top: 4px !important; align-self: flex-start !important; }
+
+			/* Padding lateral menor no wrapper externo */
+			.topContentInfos > .container {
+				padding-left: 12px !important;
+				padding-right: 12px !important;
+			}
+
+			/* Cards com padding reduzido */
+			.simple-text-farm-green,
+			.simple-text-farm-orange,
+			.simple-text-farm-red,
+			.simple-text-farm-blue,
+			.simple-text-farm-dark-blue,
+			.simple-text-farm-dark-red,
+			.simple-text,
+			.simple-text-features,
+			.simple-text-interface,
+			.simple-text-gray,
+			.simple-text-features-interface { padding: 16px !important; }
+
+			/* Colunas pequenas das vote tables: header não quebra, largura natural */
+			.column-width { min-width: 0 !important; white-space: nowrap !important; }
+			td.chance-high, td.chance-medium, td.chance-low { white-space: nowrap !important; text-align: center; }
+
+			/* Tabelas com texto longo: permite scroll horizontal como fallback */
+			.box-container .table-scroll,
+			.tab-pane table { max-width: 100% !important; }
+		}
+
+		/* Telas muito pequenas (≤ 420px) */
+		@media (max-width: 420px) {
+			.box-container { padding: 14px 12px !important; }
+			.title-container .title { font-size: 18px !important; }
+			th, td { padding: 5px 6px !important; font-size: 12.5px !important; }
+			.nav-tabs a.nav-link { font-size: 9.5px !important; padding: 6px 7px !important; letter-spacing: 0.06em !important; }
+		}
+		/* ===== END INFO PAGE MODERNIZATION ===== */
+
 		.Top_Menu {
 			background-color: #1F1E1C !important; 
 		}
@@ -895,47 +1246,7 @@ footer.amerika-footer .amerika-footer-col h4,
 									<div class="subtitle">Entenda como funciona o nosso servidor!</div>
 								</div>
 								<div class="tabs-container">
-									<style>
-										ul.nav.nav-tabs {
-											/* border: 1px solid red; */
-											border-bottom: 0 !important;
-
-										}
-
-										.nav-tabs a.nav-link {
-											border: 0 !important;
-											margin-left: 2px;
-											background-color: #272727 !important;
-										}
-										.nav-tabs {
-											margin-left: 8px;
-										}
-
-										.nav-tabs a.nav-link.active {
-											background-color: #2d2d2d !important;
-										}
-										/* #2D2D2D */
-										/* #383636 */
-										.box-container{
-											border-radius: 0;
-											background: #2d2d2d;
-											box-shadow: none;
-											position: relative;
-											/* padding-top: 60px; */
-										}
-										.tab-pane .informations-container,
-										.tab-pane .images-container{
-											border-radius: 0 !important;
-											background: #2d2d2d;
-											box-shadow: none;
-											box-shadow: none;
-											/* padding: 25px; */
-										}
-										.tab-pane > div{
-											padding-top: 1px;
-											
-										}
-									</style>
+									<!-- inline tab styles replaced by head modernization block -->
 									<!-- As abas -->
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 										<li class="nav-item">
@@ -1132,67 +1443,67 @@ footer.amerika-footer .amerika-footer-col h4,
 	</p>
 	<br>
 	<h3 class="titleInfos">Vote - Lucky Box - Top-grade (Premium)</h3>
-	<table border="1" cellpadding="5">
+	<table>
 		<thead>
 			<tr>
-				<th class="titleInfos">Item</th>
-				<th class="titleInfos column-width">Quantidade</th>
-				<th class="titleInfos column-width">Chance</th>
+				<th>Item</th>
+				<th class="column-width">Quantidade</th>
+				<th class="column-width">Chance</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td class="textPolicy">Codex Mastery</td>
 				<td class="textPolicy">10</td>
-				<td class="textPolicy" style="color: green;">High</td>
+				<td class="textPolicy chance-high">High</td>
 			</tr>
 			<tr>
 				<td class="textPolicy">Medal of Glory</td>
 				<td class="textPolicy">5</td>
-				<td class="textPolicy" style="color: yellow;">Medium</td>
+				<td class="textPolicy chance-medium">Medium</td>
 			</tr>
 			<tr>
 				<td class="textPolicy">Dragon Claw</td>
 				<td class="textPolicy">1</td>
-				<td class="textPolicy" style="color: red;">Low</td>
+				<td class="textPolicy chance-low">Low</td>
 			</tr>
 			<tr>
 				<td class="textPolicy">Lucky Box of Skins</td>
 				<td class="textPolicy">1</td>
-				<td class="textPolicy" style="color: red;">Low</td>
+				<td class="textPolicy chance-low">Low</td>
 			</tr>
 		</tbody>
 	</table>
 	<br>
 	<h3 class="titleInfos">Vote - Lucky Box - High-grade</h3>
-	<table border="1" cellpadding="5">
+	<table>
 		<thead>
 			<tr>
-				<th class="titleInfos">Item</th>
-				<th class="titleInfos column-width">Quantidade</th>
-				<th class="titleInfos column-width">Chance</th>
+				<th>Item</th>
+				<th class="column-width">Quantidade</th>
+				<th class="column-width">Chance</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td class="textPolicy">Codex Mastery</td>
 				<td class="textPolicy">5</td>
-				<td class="textPolicy" style="color: green;">High</td>
+				<td class="textPolicy chance-high">High</td>
 			</tr>
 			<tr>
 				<td class="textPolicy">Enchant of Destruction</td>
 				<td class="textPolicy">4</td>
-				<td class="textPolicy" style="color: yellow;">Medium</td>
+				<td class="textPolicy chance-medium">Medium</td>
 			</tr>
 			<tr>
 				<td class="textPolicy">Medal of Glory</td>
 				<td class="textPolicy">10</td>
-				<td class="textPolicy" style="color: red;">Low</td>
+				<td class="textPolicy chance-low">Low</td>
 			</tr>
 			<tr>
 				<td class="textPolicy">Dragon Box - Blood Weapon</td>
 				<td class="textPolicy">1</td>
-				<td class="textPolicy" style="color: red;">Low</td>
+				<td class="textPolicy chance-low">Low</td>
 			</tr>
 		</tbody>
 	</table></p>
@@ -1622,7 +1933,7 @@ footer.amerika-footer .amerika-footer-col h4,
 	</div>
 	<table style="margin-bottom: 18px;">
 		<tr>
-			<td><img src="/imgs/lindvior.jpg" alt="Lindvior" style="width: 100%;"></td>
+			<td style="border-bottom: none; padding: 0;"><img src="https://www.l2amerika.com/imgs/lindvior.jpg" alt="Lindvior" style="width: 100%; border-radius: 10px; border: 1px solid var(--mk-border);"></td>
 		</tr>
 	</table>
 	<div>
@@ -1645,90 +1956,90 @@ footer.amerika-footer .amerika-footer-col h4,
 	<div class="box-container-infos">
 	<h2 class="titleInfos">Drops do Lindvior:</h2>
 		<br1>
-		<table style="width: 100%; font-size: 18px;">
+		<table>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;" colspan="2"><strong style="color: #FF4500;">Drop especial do evento:</strong></td>
+				<td colspan="2"><strong style="color: var(--mk-gold-bright);">Drop especial do evento:</strong></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Gold Amerika:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">100% de chance de dropar Gold Amerikas.</p></td>
+				<td><p class="textPolicy">Gold Amerika:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gold);">100% de chance de dropar Gold Amerikas.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;" colspan="2"><strong style="color: #FF4500;">Grupo com 100% de chance de dropar UM dos itens abaixo:</strong></td>
+				<td colspan="2"><strong style="color: var(--mk-gold-bright);">Grupo com 100% de chance de dropar UM dos itens abaixo:</strong></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Earring of Antharas:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Earring of Antharas:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gold);">chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Ring of Baium:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Ring of Baium:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gold);">chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Necklace of Valakas:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Necklace of Valakas:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gold);">chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;" colspan="2"><strong style="color: #FF4500;">Grupo com 80% de chance de dropar UM dos itens abaixo:</strong></td>
+				<td colspan="2"><strong style="color: var(--mk-gold-bright);">Grupo com 80% de chance de dropar UM dos itens abaixo:</strong></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Earring of Antharas:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Earring of Antharas:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gold);">chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Ring of Baium:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Ring of Baium:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gold);">chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Necklace of Valakas:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Necklace of Valakas:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gold);">chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;" colspan="2"><strong style="color: #FF4500;">Demais items:</strong></td>
+				<td colspan="2"><strong style="color: var(--mk-gold-bright);">Demais items:</strong></td>
 			</tr>
 			<tr>
-			  <td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Blessed Necklace of Freya:</p></td>
-			  <td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #FFFF00;">100% de chance de dropar 1 unidade.</p></td>
+			  <td><p class="textPolicy">Blessed Necklace of Freya:</p></td>
+			  <td><p class="textPolicy" style="color: var(--mk-gold);">100% de chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Giants Codex Mastery:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">100% de chance de dropar entre 180 a 360 unidades.</p></td>
+				<td><p class="textPolicy">Giants Codex Mastery:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">100% de chance de dropar entre 180 a 360 unidades.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Boss Killer - Certificate:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">100% de chance de dropar 3 unidades.</p></td>
+				<td><p class="textPolicy">Boss Killer - Certificate:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">100% de chance de dropar 3 unidades.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Dragon Box - Blood Weapons:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">80% de chance de dropar entre 1 a 4 unidades.</p></td>
+				<td><p class="textPolicy">Dragon Box - Blood Weapons:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">80% de chance de dropar entre 1 a 4 unidades.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Dragon Claw:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">80% de chance de dropar entre 1 a 15 unidades.</p></td>
+				<td><p class="textPolicy">Dragon Claw:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">80% de chance de dropar entre 1 a 15 unidades.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Ancient Enchant S:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">75% de chance de dropar entre 1 a 5 unidades.</p></td>
+				<td><p class="textPolicy">Ancient Enchant S:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">75% de chance de dropar entre 1 a 5 unidades.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Lucky Box of Skins:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">35% de chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Lucky Box of Skins:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">35% de chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Scroll of Skin Weapon:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">35% de chance de dropar 1 unidade.</p></td>
+				<td><p class="textPolicy">Scroll of Skin Weapon:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">35% de chance de dropar 1 unidade.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Boss Weapons:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">25% de chance de dropar entre 1 a 5 unidades.</p></td>
+				<td><p class="textPolicy">Boss Weapons:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">25% de chance de dropar entre 1 a 5 unidades.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Premium 7 Days:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">100% de chance de dropar 4 unidades.</p></td>
+				<td><p class="textPolicy">Premium 7 Days:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">100% de chance de dropar 4 unidades.</p></td>
 			</tr>
 			<tr>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy">Premium 1 Day:</p></td>
-				<td style="padding: 5px; text-align: left; vertical-align: top; border-bottom: 1px solid #363636;"><p class="textPolicy" style="color: #d3d3d3;">100% de chance de dropar 4 unidades.</p></td>
+				<td><p class="textPolicy">Premium 1 Day:</p></td>
+				<td><p class="textPolicy" style="color: var(--mk-gray);">100% de chance de dropar 4 unidades.</p></td>
 			</tr>
 		</table>
 	</div>
@@ -1739,26 +2050,8 @@ footer.amerika-footer .amerika-footer-col h4,
 					</div>
 				</div>
 <style>
-    .column-width {
-        min-width: 150px;
-    }
-    table {
-        width: 100%;
-        font-size: 18px;
-    }
-    th, td {
-        padding: 5px;
-        text-align: left;
-        vertical-align: top;
-        border-bottom: 1px solid #363636;
-    }
-.img-centralizada {
-    width: 535px; /* Largura desejada */
-    height: 100%; /* Altura desejada */
-    display: block;
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
-}
-
+    .column-width { min-width: 150px; }
+    .img-centralizada { width: 535px; height: 100%; display: block; margin: 0 auto; }
 </style>					</div>
 				</article>
 			</section>
